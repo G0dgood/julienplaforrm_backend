@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "client_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "responsible": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    },
+    "sport": {
+      "type": "json"
+    },
+    "business_unit": {
+      "type": "json"
+    },
+    "category": {
+      "type": "json"
+    },
+    "fee": {
+      "type": "string"
+    }
+  }
+}
