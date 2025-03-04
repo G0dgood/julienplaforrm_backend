@@ -4,13 +4,14 @@
   "info": {
     "singularName": "client",
     "pluralName": "clients",
-    "displayName": "Client"
+    "displayName": "Client",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "client_name": {
+    "name": {
       "type": "string"
     },
     "email": {
@@ -19,23 +20,23 @@
     "slug": {
       "type": "uid"
     },
-    "responsible": {
+    "responsiblePerson": {
       "type": "string"
     },
     "approver": {
       "type": "string"
     },
-    "sport": {
-      "type": "json"
-    },
-    "business_unit": {
-      "type": "json"
-    },
-    "category": {
-      "type": "json"
-    },
-    "fee": {
+    "feeType": {
       "type": "string"
+    },
+    "sports": {
+      "type": "json"
+    },
+    "categories": {
+      "type": "json"
+    },
+    "businessUnits": {
+      "type": "json"
     }
   }
 }

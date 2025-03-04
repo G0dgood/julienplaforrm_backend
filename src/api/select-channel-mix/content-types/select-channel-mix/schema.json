@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "select_channel_mixes",
+  "info": {
+    "singularName": "select-channel-mix",
+    "pluralName": "select-channel-mixes",
+    "displayName": "SelectChannelMix"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "awareness": {
+      "type": "json"
+    },
+    "consideration": {
+      "type": "json"
+    },
+    "conversion": {
+      "type": "json"
+    }
+  }
+}
