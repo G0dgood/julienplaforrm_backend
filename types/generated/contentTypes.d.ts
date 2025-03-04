@@ -413,7 +413,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     blocks: Schema.Attribute.DynamicZone<
       ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
     >;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -437,41 +436,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    description: 'Organize your content into categories';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiClientClient extends Struct.CollectionTypeSchema {
   collectionName: 'clients';
   info: {
+    description: '';
     displayName: 'Client';
     pluralName: 'clients';
     singularName: 'client';
@@ -481,24 +449,24 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
   attributes: {
     approver: Schema.Attribute.String;
-    business_unit: Schema.Attribute.JSON;
-    category: Schema.Attribute.JSON;
-    client_name: Schema.Attribute.String;
+    businessUnits: Schema.Attribute.JSON;
+    categories: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email;
-    fee: Schema.Attribute.String;
+    feeType: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::client.client'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    responsible: Schema.Attribute.String;
+    responsiblePerson: Schema.Attribute.String;
     slug: Schema.Attribute.UID;
-    sport: Schema.Attribute.JSON;
+    sports: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -531,6 +499,100 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMapFunnelStagesMapFunnelStages
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'map_funnel_stage';
+  info: {
+    displayName: 'MapFunnelStages';
+    pluralName: 'map-funnel-stage';
+    singularName: 'map-funnel-stages';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    awareness: Schema.Attribute.String;
+    consideration: Schema.Attribute.String;
+    conversion: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::map-funnel-stages.map-funnel-stages'
+    > &
+      Schema.Attribute.Private;
+    loyalty: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSelectChannelMixSelectChannelMix
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'select_channel_mixes';
+  info: {
+    displayName: 'SelectChannelMix';
+    pluralName: 'select-channel-mixes';
+    singularName: 'select-channel-mix';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    awareness: Schema.Attribute.JSON;
+    consideration: Schema.Attribute.JSON;
+    conversion: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::select-channel-mix.select-channel-mix'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSetupCampaignSetupCampaign
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'setup_campaigns';
+  info: {
+    displayName: 'setupCampaign';
+    pluralName: 'setup-campaigns';
+    singularName: 'setup-campaign';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    budgetDetails: Schema.Attribute.JSON;
+    clientSelection: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::setup-campaign.setup-campaign'
+    > &
+      Schema.Attribute.Private;
+    mediaPlanDetails: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1048,9 +1110,11 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
-      'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
       'api::global.global': ApiGlobalGlobal;
+      'api::map-funnel-stages.map-funnel-stages': ApiMapFunnelStagesMapFunnelStages;
+      'api::select-channel-mix.select-channel-mix': ApiSelectChannelMixSelectChannelMix;
+      'api::setup-campaign.setup-campaign': ApiSetupCampaignSetupCampaign;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

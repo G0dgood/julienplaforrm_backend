@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "setup_campaigns",
+  "info": {
+    "singularName": "setup-campaign",
+    "pluralName": "setup-campaigns",
+    "displayName": "setupCampaign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "clientSelection": {
+      "type": "json"
+    },
+    "mediaPlanDetails": {
+      "type": "json"
+    },
+    "budgetDetails": {
+      "type": "json"
+    }
+  }
+}
