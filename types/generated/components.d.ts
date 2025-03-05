@@ -1,5 +1,25 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SetupNewCampaignMediaplan extends Struct.ComponentSchema {
+  collectionName: 'components_setup_new_campaign_mediaplans';
+  info: {
+    displayName: 'mediaplan';
+  };
+  attributes: {
+    configureAdSetsandBudget: Schema.Attribute.JSON;
+    defineCampaignObjective: Schema.Attribute.JSON;
+    establishGoals: Schema.Attribute.JSON;
+    formatsSelection: Schema.Attribute.JSON;
+    mapFunnelStages: Schema.Attribute.JSON;
+    midRecap: Schema.Attribute.JSON;
+    overviewOfYourCampaign: Schema.Attribute.JSON;
+    planCampaignSchedule: Schema.Attribute.JSON;
+    selectChannelMix: Schema.Attribute.JSON;
+    setBuyObjectivesandTypes: Schema.Attribute.JSON;
+    setupNewCampaign: Schema.Attribute.JSON;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +85,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'setup-new-campaign.mediaplan': SetupNewCampaignMediaplan;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
