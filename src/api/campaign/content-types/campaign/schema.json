@@ -4,7 +4,8 @@
   "info": {
     "singularName": "campaign",
     "pluralName": "campaigns",
-    "displayName": "Campaign"
+    "displayName": "Campaign",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

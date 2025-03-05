@@ -401,6 +401,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
   collectionName: 'campaigns';
   info: {
+    description: '';
     displayName: 'Campaign';
     pluralName: 'campaigns';
     singularName: 'campaign';
