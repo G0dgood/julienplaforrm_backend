@@ -1,7 +1,8 @@
 {
   "collectionName": "components_setup_new_campaign_mediaplans",
   "info": {
-    "displayName": "mediaplan"
+    "displayName": "mediaplan",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -33,9 +34,6 @@
       "type": "json"
     },
     "establishGoals": {
-      "type": "json"
-    },
-    "overviewOfYourCampaign": {
       "type": "json"
     }
   }

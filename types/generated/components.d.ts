@@ -3,6 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SetupNewCampaignMediaplan extends Struct.ComponentSchema {
   collectionName: 'components_setup_new_campaign_mediaplans';
   info: {
+    description: '';
     displayName: 'mediaplan';
   };
   attributes: {
@@ -12,7 +13,6 @@ export interface SetupNewCampaignMediaplan extends Struct.ComponentSchema {
     formatsSelection: Schema.Attribute.JSON;
     mapFunnelStages: Schema.Attribute.JSON;
     midRecap: Schema.Attribute.JSON;
-    overviewOfYourCampaign: Schema.Attribute.JSON;
     planCampaignSchedule: Schema.Attribute.JSON;
     selectChannelMix: Schema.Attribute.JSON;
     setBuyObjectivesandTypes: Schema.Attribute.JSON;
