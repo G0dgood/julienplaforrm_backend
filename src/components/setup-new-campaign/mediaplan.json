@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_setup_new_campaign_mediaplans",
+  "info": {
+    "displayName": "mediaplan"
+  },
+  "options": {},
+  "attributes": {
+    "setupNewCampaign": {
+      "type": "json"
+    },
+    "defineCampaignObjective": {
+      "type": "json"
+    },
+    "mapFunnelStages": {
+      "type": "json"
+    },
+    "selectChannelMix": {
+      "type": "json"
+    },
+    "formatsSelection": {
+      "type": "json"
+    },
+    "setBuyObjectivesandTypes": {
+      "type": "json"
+    },
+    "midRecap": {
+      "type": "json"
+    },
+    "planCampaignSchedule": {
+      "type": "json"
+    },
+    "configureAdSetsandBudget": {
+      "type": "json"
+    },
+    "establishGoals": {
+      "type": "json"
+    },
+    "overviewOfYourCampaign": {
+      "type": "json"
+    }
+  }
+}

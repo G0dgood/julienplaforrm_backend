@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "mediaplan": {
+      "displayName": "mediaplan",
+      "type": "component",
+      "repeatable": true,
+      "component": "setup-new-campaign.mediaplan"
+    }
+  }
+}
