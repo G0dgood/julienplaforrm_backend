@@ -1,22 +1,94 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SetupNewCampaignMediaplan extends Struct.ComponentSchema {
-  collectionName: 'components_setup_new_campaign_mediaplans';
+export interface CampaignBudgetDetails extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_budget_details';
   info: {
-    description: '';
-    displayName: 'mediaplan';
+    displayName: 'Budget_details';
+    icon: 'cup';
   };
   attributes: {
-    configureAdSetsandBudget: Schema.Attribute.JSON;
-    defineCampaignObjective: Schema.Attribute.JSON;
-    establishGoals: Schema.Attribute.JSON;
-    formatsSelection: Schema.Attribute.JSON;
-    mapFunnelStages: Schema.Attribute.JSON;
-    midRecap: Schema.Attribute.JSON;
-    planCampaignSchedule: Schema.Attribute.JSON;
-    selectChannelMix: Schema.Attribute.JSON;
-    setBuyObjectivesandTypes: Schema.Attribute.JSON;
-    setupNewCampaign: Schema.Attribute.JSON;
+    currency: Schema.Attribute.String;
+    fee_type: Schema.Attribute.String;
+    sub_fee_type: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignChannelMix extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_channel_mixes';
+  info: {
+    description: '';
+    displayName: 'Channel_mix';
+    icon: 'command';
+  };
+  attributes: {
+    display_networks: Schema.Attribute.Component<
+      'campaign.format-selection',
+      true
+    >;
+    funnel_stage: Schema.Attribute.String;
+    search_engines: Schema.Attribute.Component<
+      'campaign.format-selection',
+      true
+    >;
+    social_media: Schema.Attribute.Component<'campaign.format-selection', true>;
+  };
+}
+
+export interface CampaignClientSelection extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_client_selections';
+  info: {
+    displayName: 'client_selection';
+    icon: 'calendar';
+  };
+  attributes: {
+    business_unit: Schema.Attribute.String;
+    category: Schema.Attribute.String;
+    client: Schema.Attribute.String;
+    sport: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignFormat extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_formats';
+  info: {
+    description: '';
+    displayName: 'Format';
+    icon: 'clock';
+  };
+  attributes: {
+    format_type: Schema.Attribute.String;
+    num_of_visuals: Schema.Attribute.String;
+    previews: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface CampaignFormatSelection extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_format_selections';
+  info: {
+    displayName: 'format_selection';
+    icon: 'code';
+  };
+  attributes: {
+    buy_type: Schema.Attribute.String;
+    format: Schema.Attribute.Component<'campaign.format', true>;
+    objective_type: Schema.Attribute.String;
+    platform_name: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_media_plan_details';
+  info: {
+    displayName: 'Media_plan_details';
+    icon: 'cursor';
+  };
+  attributes: {
+    internal_approver: Schema.Attribute.String;
+    plan_name: Schema.Attribute.String;
   };
 }
 
@@ -85,7 +157,12 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'setup-new-campaign.mediaplan': SetupNewCampaignMediaplan;
+      'campaign.budget-details': CampaignBudgetDetails;
+      'campaign.channel-mix': CampaignChannelMix;
+      'campaign.client-selection': CampaignClientSelection;
+      'campaign.format': CampaignFormat;
+      'campaign.format-selection': CampaignFormatSelection;
+      'campaign.media-plan-details': CampaignMediaPlanDetails;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

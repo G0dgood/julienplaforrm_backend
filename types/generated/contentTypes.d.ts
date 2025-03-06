@@ -410,16 +410,30 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    budget_details: Schema.Attribute.Component<
+      'campaign.budget-details',
+      false
+    >;
+    campaign_objective: Schema.Attribute.String;
+    channel_mix: Schema.Attribute.Component<'campaign.channel-mix', true>;
+    client_selection: Schema.Attribute.Component<
+      'campaign.client-selection',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    funnel_stages: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::campaign.campaign'
     > &
       Schema.Attribute.Private;
-    mediaplan: Schema.Attribute.Component<'setup-new-campaign.mediaplan', true>;
+    media_plan_details: Schema.Attribute.Component<
+      'campaign.media-plan-details',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -430,7 +444,6 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
 export interface ApiClientClient extends Struct.CollectionTypeSchema {
   collectionName: 'clients';
   info: {
-    description: '';
     displayName: 'Client';
     pluralName: 'clients';
     singularName: 'client';
@@ -440,24 +453,23 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
   attributes: {
     approver: Schema.Attribute.String;
-    businessUnits: Schema.Attribute.JSON;
-    categories: Schema.Attribute.JSON;
+    business_unit: Schema.Attribute.JSON;
+    category: Schema.Attribute.JSON;
+    client_emails: Schema.Attribute.JSON;
+    client_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
-    feeType: Schema.Attribute.String;
+    fee_type: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::client.client'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    responsiblePerson: Schema.Attribute.String;
-    slug: Schema.Attribute.UID;
-    sports: Schema.Attribute.JSON;
+    responsible: Schema.Attribute.String;
+    sport: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_campaign_format_selections",
+  "info": {
+    "displayName": "format_selection",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "platform_name": {
+      "type": "string"
+    },
+    "buy_type": {
+      "type": "string"
+    },
+    "objective_type": {
+      "type": "string"
+    },
+    "format": {
+      "displayName": "Format",
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format"
+    }
+  }
+}

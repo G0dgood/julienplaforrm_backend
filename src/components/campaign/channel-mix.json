@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_campaign_channel_mixes",
+  "info": {
+    "displayName": "Channel_mix",
+    "icon": "command",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "social_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "display_networks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "search_engines": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "funnel_stage": {
+      "type": "string"
+    }
+  }
+}

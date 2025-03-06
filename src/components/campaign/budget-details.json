@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_campaign_budget_details",
+  "info": {
+    "displayName": "Budget_details",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "string"
+    },
+    "fee_type": {
+      "type": "string"
+    },
+    "sub_fee_type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

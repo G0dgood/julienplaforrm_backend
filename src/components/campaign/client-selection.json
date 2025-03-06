@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_campaign_client_selections",
+  "info": {
+    "displayName": "client_selection",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "client": {
+      "type": "string"
+    },
+    "sport": {
+      "type": "string"
+    },
+    "business_unit": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    }
+  }
+}

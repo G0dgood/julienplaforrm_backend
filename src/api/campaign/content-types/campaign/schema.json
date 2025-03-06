@@ -11,11 +11,32 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "mediaplan": {
-      "displayName": "mediaplan",
+    "client_selection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.client-selection"
+    },
+    "media_plan_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.media-plan-details"
+    },
+    "budget_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.budget-details"
+    },
+    "campaign_objective": {
+      "type": "string"
+    },
+    "funnel_stages": {
+      "type": "json"
+    },
+    "channel_mix": {
+      "displayName": "Channel_mix",
       "type": "component",
       "repeatable": true,
-      "component": "setup-new-campaign.mediaplan"
+      "component": "campaign.channel-mix"
     }
   }
 }
