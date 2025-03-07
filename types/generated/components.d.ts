@@ -38,14 +38,15 @@ export interface CampaignChannelMix extends Struct.ComponentSchema {
 export interface CampaignClientSelection extends Struct.ComponentSchema {
   collectionName: 'components_campaign_client_selections';
   info: {
+    description: '';
     displayName: 'client_selection';
     icon: 'calendar';
   };
   attributes: {
-    business_unit: Schema.Attribute.String;
-    category: Schema.Attribute.String;
     client: Schema.Attribute.String;
-    sport: Schema.Attribute.String;
+    level_1: Schema.Attribute.String;
+    level_2: Schema.Attribute.String;
+    level_3: Schema.Attribute.String;
   };
 }
 

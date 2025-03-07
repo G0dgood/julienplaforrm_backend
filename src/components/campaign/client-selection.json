@@ -2,20 +2,21 @@
   "collectionName": "components_campaign_client_selections",
   "info": {
     "displayName": "client_selection",
-    "icon": "calendar"
+    "icon": "calendar",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "client": {
       "type": "string"
     },
-    "sport": {
+    "level_1": {
       "type": "string"
     },
-    "business_unit": {
+    "level_2": {
       "type": "string"
     },
-    "category": {
+    "level_3": {
       "type": "string"
     }
   }
