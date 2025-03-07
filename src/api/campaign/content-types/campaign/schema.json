@@ -38,6 +38,11 @@
       "relation": "manyToOne",
       "target": "api::client.client",
       "inversedBy": "campaigns"
+    },
+    "client_selection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.client-selection"
     }
   }
 }

@@ -417,6 +417,10 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     campaign_objective: Schema.Attribute.String;
     channel_mix: Schema.Attribute.Component<'campaign.channel-mix', true>;
     client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
+    client_selection: Schema.Attribute.Component<
+      'campaign.client-selection',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
