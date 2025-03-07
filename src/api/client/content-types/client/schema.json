@@ -4,7 +4,8 @@
   "info": {
     "singularName": "client",
     "pluralName": "clients",
-    "displayName": "Client"
+    "displayName": "Client",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,17 +23,23 @@
     "approver": {
       "type": "string"
     },
-    "sport": {
+    "level_1": {
       "type": "json"
     },
-    "business_unit": {
+    "level_2": {
       "type": "json"
     },
-    "category": {
+    "level_3": {
       "type": "json"
     },
     "fee_type": {
       "type": "string"
+    },
+    "campaigns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign.campaign",
+      "mappedBy": "client"
     }
   }
 }

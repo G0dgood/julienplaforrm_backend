@@ -416,10 +416,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     >;
     campaign_objective: Schema.Attribute.String;
     channel_mix: Schema.Attribute.Component<'campaign.channel-mix', true>;
-    client_selection: Schema.Attribute.Component<
-      'campaign.client-selection',
-      false
-    >;
+    client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -444,6 +441,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
 export interface ApiClientClient extends Struct.CollectionTypeSchema {
   collectionName: 'clients';
   info: {
+    description: '';
     displayName: 'Client';
     pluralName: 'clients';
     singularName: 'client';
@@ -453,14 +451,16 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
   attributes: {
     approver: Schema.Attribute.String;
-    business_unit: Schema.Attribute.JSON;
-    category: Schema.Attribute.JSON;
+    campaigns: Schema.Attribute.Relation<'oneToMany', 'api::campaign.campaign'>;
     client_emails: Schema.Attribute.JSON;
     client_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     fee_type: Schema.Attribute.String;
+    level_1: Schema.Attribute.JSON;
+    level_2: Schema.Attribute.JSON;
+    level_3: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -469,7 +469,6 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     responsible: Schema.Attribute.String;
-    sport: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
