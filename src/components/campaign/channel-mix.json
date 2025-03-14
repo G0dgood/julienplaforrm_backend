@@ -24,6 +24,17 @@
     },
     "funnel_stage": {
       "type": "string"
+    },
+    "funnel_stage_timeline_start_date": {
+      "type": "date"
+    },
+    "funnel_stage_timeline_end_date": {
+      "type": "date"
+    },
+    "stage_budget": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.individual-budget"
     }
   }
 }

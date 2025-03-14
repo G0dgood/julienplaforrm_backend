@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_campaign_campaign_budgets",
+  "info": {
+    "displayName": "Campaign_budget",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "budget_type": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    }
+  }
+}

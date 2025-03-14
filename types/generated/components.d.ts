@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CampaignAdSet extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_ad_sets';
+  info: {
+    displayName: 'Ad_set';
+    icon: 'connector';
+  };
+  attributes: {
+    ad_set_name: Schema.Attribute.String;
+    ad_set_size: Schema.Attribute.String;
+    audience_type: Schema.Attribute.String;
+  };
+}
+
 export interface CampaignBudgetDetails extends Struct.ComponentSchema {
   collectionName: 'components_campaign_budget_details';
   info: {
@@ -11,6 +24,19 @@ export interface CampaignBudgetDetails extends Struct.ComponentSchema {
     fee_type: Schema.Attribute.String;
     sub_fee_type: Schema.Attribute.String;
     value: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignCampaignBudget extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_campaign_budgets';
+  info: {
+    displayName: 'Campaign_budget';
+    icon: 'briefcase';
+  };
+  attributes: {
+    amount: Schema.Attribute.String;
+    budget_type: Schema.Attribute.String;
+    currency: Schema.Attribute.String;
   };
 }
 
@@ -27,11 +53,17 @@ export interface CampaignChannelMix extends Struct.ComponentSchema {
       true
     >;
     funnel_stage: Schema.Attribute.String;
+    funnel_stage_timeline_end_date: Schema.Attribute.Date;
+    funnel_stage_timeline_start_date: Schema.Attribute.Date;
     search_engines: Schema.Attribute.Component<
       'campaign.format-selection',
       true
     >;
     social_media: Schema.Attribute.Component<'campaign.format-selection', true>;
+    stage_budget: Schema.Attribute.Component<
+      'campaign.individual-budget',
+      false
+    >;
   };
 }
 
@@ -70,14 +102,33 @@ export interface CampaignFormat extends Struct.ComponentSchema {
 export interface CampaignFormatSelection extends Struct.ComponentSchema {
   collectionName: 'components_campaign_format_selections';
   info: {
+    description: '';
     displayName: 'format_selection';
     icon: 'code';
   };
   attributes: {
+    ad_sets: Schema.Attribute.Component<'campaign.ad-set', true>;
+    budget: Schema.Attribute.Component<'campaign.individual-budget', false>;
     buy_type: Schema.Attribute.String;
+    campaign_end_date: Schema.Attribute.Date;
+    campaign_start_date: Schema.Attribute.Date;
     format: Schema.Attribute.Component<'campaign.format', true>;
     objective_type: Schema.Attribute.String;
     platform_name: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignIndividualBudget extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_individual_budgets';
+  info: {
+    description: '';
+    displayName: 'Individual_budget';
+    icon: 'cog';
+  };
+  attributes: {
+    currency: Schema.Attribute.String;
+    fixed_value: Schema.Attribute.String;
+    percentage_value: Schema.Attribute.String;
   };
 }
 
@@ -158,11 +209,14 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'campaign.ad-set': CampaignAdSet;
       'campaign.budget-details': CampaignBudgetDetails;
+      'campaign.campaign-budget': CampaignCampaignBudget;
       'campaign.channel-mix': CampaignChannelMix;
       'campaign.client-selection': CampaignClientSelection;
       'campaign.format': CampaignFormat;
       'campaign.format-selection': CampaignFormatSelection;
+      'campaign.individual-budget': CampaignIndividualBudget;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

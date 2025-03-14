@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_campaign_individual_budgets",
+  "info": {
+    "displayName": "Individual_budget",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "string"
+    },
+    "fixed_value": {
+      "type": "string"
+    },
+    "percentage_value": {
+      "type": "string"
+    }
+  }
+}
