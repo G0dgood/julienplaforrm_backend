@@ -3,13 +3,14 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface CampaignAdSet extends Struct.ComponentSchema {
   collectionName: 'components_campaign_ad_sets';
   info: {
+    description: '';
     displayName: 'Ad_set';
     icon: 'connector';
   };
   attributes: {
-    ad_set_name: Schema.Attribute.String;
-    ad_set_size: Schema.Attribute.String;
     audience_type: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    size: Schema.Attribute.String;
   };
 }
 

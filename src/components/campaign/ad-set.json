@@ -2,17 +2,18 @@
   "collectionName": "components_campaign_ad_sets",
   "info": {
     "displayName": "Ad_set",
-    "icon": "connector"
+    "icon": "connector",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "audience_type": {
       "type": "string"
     },
-    "ad_set_name": {
+    "name": {
       "type": "string"
     },
-    "ad_set_size": {
+    "size": {
       "type": "string"
     }
   }
