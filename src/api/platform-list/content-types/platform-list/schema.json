@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platform_lists",
+  "info": {
+    "singularName": "platform-list",
+    "pluralName": "platform-lists",
+    "displayName": "Platform list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "channel_type": {
+      "type": "string"
+    },
+    "platform_name": {
+      "type": "string",
+      "unique": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

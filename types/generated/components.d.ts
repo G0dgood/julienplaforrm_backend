@@ -145,6 +145,15 @@ export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface CampaignType extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_types';
+  info: {
+    displayName: 'Type';
+    icon: 'connector';
+  };
+  attributes: {};
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -219,6 +228,7 @@ declare module '@strapi/strapi' {
       'campaign.format-selection': CampaignFormatSelection;
       'campaign.individual-budget': CampaignIndividualBudget;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
+      'campaign.type': CampaignType;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buy_objectives",
+  "info": {
+    "singularName": "buy-objective",
+    "pluralName": "buy-objectives",
+    "displayName": "Buy objective"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

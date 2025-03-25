@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buy_types",
+  "info": {
+    "singularName": "buy-type",
+    "pluralName": "buy-types",
+    "displayName": "Buy type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

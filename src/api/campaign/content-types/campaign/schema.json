@@ -57,6 +57,9 @@
     },
     "campaign_summary_comment": {
       "type": "text"
+    },
+    "goal_level": {
+      "type": "string"
     }
   }
 }

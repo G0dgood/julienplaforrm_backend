@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_campaign_types",
+  "info": {
+    "displayName": "Type",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {}
+}
