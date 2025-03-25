@@ -15,6 +15,12 @@
     },
     "size": {
       "type": "string"
+    },
+    "cpm": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "string"
     }
   }
 }

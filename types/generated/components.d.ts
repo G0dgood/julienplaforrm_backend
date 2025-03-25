@@ -9,6 +9,8 @@ export interface CampaignAdSet extends Struct.ComponentSchema {
   };
   attributes: {
     audience_type: Schema.Attribute.String;
+    cpm: Schema.Attribute.String;
+    frequency: Schema.Attribute.String;
     name: Schema.Attribute.String;
     size: Schema.Attribute.String;
   };
@@ -113,7 +115,9 @@ export interface CampaignFormatSelection extends Struct.ComponentSchema {
     buy_type: Schema.Attribute.String;
     campaign_end_date: Schema.Attribute.Date;
     campaign_start_date: Schema.Attribute.Date;
+    cpm: Schema.Attribute.String;
     format: Schema.Attribute.Component<'campaign.format', true>;
+    frequency: Schema.Attribute.String;
     objective_type: Schema.Attribute.String;
     platform_name: Schema.Attribute.String;
   };
