@@ -38,11 +38,10 @@
       "repeatable": false,
       "component": "campaign.individual-budget"
     },
-    "cpm": {
-      "type": "string"
-    },
-    "frequency": {
-      "type": "string"
+    "kpi": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.kp-is"
     }
   }
 }

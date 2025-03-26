@@ -9,8 +9,7 @@ export interface CampaignAdSet extends Struct.ComponentSchema {
   };
   attributes: {
     audience_type: Schema.Attribute.String;
-    cpm: Schema.Attribute.String;
-    frequency: Schema.Attribute.String;
+    kpi: Schema.Attribute.Component<'campaign.kp-is', false>;
     name: Schema.Attribute.String;
     size: Schema.Attribute.String;
   };
@@ -115,9 +114,8 @@ export interface CampaignFormatSelection extends Struct.ComponentSchema {
     buy_type: Schema.Attribute.String;
     campaign_end_date: Schema.Attribute.Date;
     campaign_start_date: Schema.Attribute.Date;
-    cpm: Schema.Attribute.String;
     format: Schema.Attribute.Component<'campaign.format', true>;
-    frequency: Schema.Attribute.String;
+    kpi: Schema.Attribute.Component<'campaign.kp-is', false>;
     objective_type: Schema.Attribute.String;
     platform_name: Schema.Attribute.String;
   };
@@ -134,6 +132,30 @@ export interface CampaignIndividualBudget extends Struct.ComponentSchema {
     currency: Schema.Attribute.String;
     fixed_value: Schema.Attribute.String;
     percentage_value: Schema.Attribute.String;
+  };
+}
+
+export interface CampaignKpIs extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_kp_is';
+  info: {
+    displayName: 'KPIs';
+    icon: 'crop';
+  };
+  attributes: {
+    avg_pages_visit: Schema.Attribute.Integer;
+    avg_visit_time: Schema.Attribute.Integer;
+    bounce_rate: Schema.Attribute.Integer;
+    click_to_land_rate: Schema.Attribute.Integer;
+    clv_of_associated_product: Schema.Attribute.Integer;
+    completion_rate: Schema.Attribute.Integer;
+    CPM: Schema.Attribute.Integer;
+    CTR: Schema.Attribute.Integer;
+    CVR: Schema.Attribute.Integer;
+    eng_rate: Schema.Attribute.Integer;
+    frequency: Schema.Attribute.Integer;
+    lead_rate: Schema.Attribute.Integer;
+    off_funnel_rate: Schema.Attribute.Integer;
+    open_rate: Schema.Attribute.Integer;
   };
 }
 
@@ -231,6 +253,7 @@ declare module '@strapi/strapi' {
       'campaign.format': CampaignFormat;
       'campaign.format-selection': CampaignFormatSelection;
       'campaign.individual-budget': CampaignIndividualBudget;
+      'campaign.kp-is': CampaignKpIs;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
       'campaign.type': CampaignType;
       'shared.media': SharedMedia;
