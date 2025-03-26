@@ -4,7 +4,8 @@
   "info": {
     "singularName": "platform-list",
     "pluralName": "platform-lists",
-    "displayName": "Platform list"
+    "displayName": "Platform list",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,7 +19,8 @@
     },
     "platform_name": {
       "type": "string",
-      "unique": true
+      "unique": false,
+      "required": true
     },
     "description": {
       "type": "string"

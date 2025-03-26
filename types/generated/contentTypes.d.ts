@@ -580,6 +580,7 @@ export interface ApiPlatformListPlatformList
   extends Struct.CollectionTypeSchema {
   collectionName: 'platform_lists';
   info: {
+    description: '';
     displayName: 'Platform list';
     pluralName: 'platform-lists';
     singularName: 'platform-list';
@@ -599,7 +600,7 @@ export interface ApiPlatformListPlatformList
       'api::platform-list.platform-list'
     > &
       Schema.Attribute.Private;
-    platform_name: Schema.Attribute.String & Schema.Attribute.Unique;
+    platform_name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
