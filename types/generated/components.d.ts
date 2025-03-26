@@ -138,6 +138,7 @@ export interface CampaignIndividualBudget extends Struct.ComponentSchema {
 export interface CampaignKpIs extends Struct.ComponentSchema {
   collectionName: 'components_campaign_kp_is';
   info: {
+    description: '';
     displayName: 'KPIs';
     icon: 'crop';
   };
@@ -148,9 +149,9 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     click_to_land_rate: Schema.Attribute.Integer;
     clv_of_associated_product: Schema.Attribute.Integer;
     completion_rate: Schema.Attribute.Integer;
-    CPM: Schema.Attribute.Integer;
-    CTR: Schema.Attribute.Integer;
-    CVR: Schema.Attribute.Integer;
+    cpm: Schema.Attribute.Integer;
+    ctr: Schema.Attribute.Integer;
+    cvr: Schema.Attribute.Integer;
     eng_rate: Schema.Attribute.Integer;
     frequency: Schema.Attribute.Integer;
     lead_rate: Schema.Attribute.Integer;

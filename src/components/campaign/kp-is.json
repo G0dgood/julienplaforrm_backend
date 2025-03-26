@@ -2,11 +2,12 @@
   "collectionName": "components_campaign_kp_is",
   "info": {
     "displayName": "KPIs",
-    "icon": "crop"
+    "icon": "crop",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "CPM": {
+    "cpm": {
       "type": "integer"
     },
     "frequency": {
@@ -18,10 +19,10 @@
     "eng_rate": {
       "type": "integer"
     },
-    "CTR": {
+    "ctr": {
       "type": "integer"
     },
-    "CVR": {
+    "cvr": {
       "type": "integer"
     },
     "avg_pages_visit": {
