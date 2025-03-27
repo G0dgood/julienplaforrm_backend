@@ -75,6 +75,15 @@
     },
     "cpc": {
       "type": "integer"
+    },
+    "installs": {
+      "type": "integer"
+    },
+    "install_rate": {
+      "type": "integer"
+    },
+    "cpi": {
+      "type": "integer"
     }
   }
 }
