@@ -160,6 +160,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     off_funnel_rate: Schema.Attribute.Integer;
     open_rate: Schema.Attribute.Integer;
     reach: Schema.Attribute.Integer;
+    vtr: Schema.Attribute.Integer;
   };
 }
 

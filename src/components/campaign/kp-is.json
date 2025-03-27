@@ -57,6 +57,9 @@
     },
     "cpcv": {
       "type": "integer"
+    },
+    "vtr": {
+      "type": "integer"
     }
   }
 }
