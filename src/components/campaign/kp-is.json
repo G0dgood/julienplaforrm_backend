@@ -69,6 +69,12 @@
     },
     "cpv": {
       "type": "integer"
+    },
+    "link_clicks": {
+      "type": "integer"
+    },
+    "cpc": {
+      "type": "integer"
     }
   }
 }

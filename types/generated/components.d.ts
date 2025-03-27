@@ -150,6 +150,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     clv_of_associated_product: Schema.Attribute.Integer;
     completed_view: Schema.Attribute.Integer;
     completion_rate: Schema.Attribute.Integer;
+    cpc: Schema.Attribute.Integer;
     cpcv: Schema.Attribute.Integer;
     cpm: Schema.Attribute.Integer;
     cpv: Schema.Attribute.Integer;
@@ -159,6 +160,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     frequency: Schema.Attribute.Integer;
     impressions: Schema.Attribute.Integer;
     lead_rate: Schema.Attribute.Integer;
+    link_clicks: Schema.Attribute.Integer;
     off_funnel_rate: Schema.Attribute.Integer;
     open_rate: Schema.Attribute.Integer;
     reach: Schema.Attribute.Integer;
