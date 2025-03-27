@@ -154,6 +154,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     cvr: Schema.Attribute.Integer;
     eng_rate: Schema.Attribute.Integer;
     frequency: Schema.Attribute.Integer;
+    impressions: Schema.Attribute.Integer;
     lead_rate: Schema.Attribute.Integer;
     off_funnel_rate: Schema.Attribute.Integer;
     open_rate: Schema.Attribute.Integer;
