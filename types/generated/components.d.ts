@@ -148,6 +148,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     bounce_rate: Schema.Attribute.Integer;
     click_to_land_rate: Schema.Attribute.Integer;
     clv_of_associated_product: Schema.Attribute.Integer;
+    completed_view: Schema.Attribute.Integer;
     completion_rate: Schema.Attribute.Integer;
     cpcv: Schema.Attribute.Integer;
     cpm: Schema.Attribute.Integer;
@@ -160,6 +161,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     off_funnel_rate: Schema.Attribute.Integer;
     open_rate: Schema.Attribute.Integer;
     reach: Schema.Attribute.Integer;
+    video_views: Schema.Attribute.Integer;
     vtr: Schema.Attribute.Integer;
   };
 }

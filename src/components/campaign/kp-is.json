@@ -60,6 +60,12 @@
     },
     "vtr": {
       "type": "integer"
+    },
+    "video_views": {
+      "type": "integer"
+    },
+    "completed_view": {
+      "type": "integer"
     }
   }
 }
