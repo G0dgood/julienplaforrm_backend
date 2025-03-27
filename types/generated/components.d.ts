@@ -149,6 +149,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     click_to_land_rate: Schema.Attribute.Integer;
     clv_of_associated_product: Schema.Attribute.Integer;
     completion_rate: Schema.Attribute.Integer;
+    cpcv: Schema.Attribute.Integer;
     cpm: Schema.Attribute.Integer;
     ctr: Schema.Attribute.Integer;
     cvr: Schema.Attribute.Integer;

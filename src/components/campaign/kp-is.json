@@ -54,6 +54,9 @@
     },
     "impressions": {
       "type": "integer"
+    },
+    "cpcv": {
+      "type": "integer"
     }
   }
 }
