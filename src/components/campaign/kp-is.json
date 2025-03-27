@@ -87,6 +87,12 @@
     },
     "cpl": {
       "type": "integer"
+    },
+    "engagements": {
+      "type": "integer"
+    },
+    "cpe": {
+      "type": "integer"
     }
   }
 }

@@ -152,6 +152,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     completion_rate: Schema.Attribute.Integer;
     cpc: Schema.Attribute.Integer;
     cpcv: Schema.Attribute.Integer;
+    cpe: Schema.Attribute.Integer;
     cpi: Schema.Attribute.Integer;
     cpl: Schema.Attribute.Integer;
     cpm: Schema.Attribute.Integer;
@@ -159,6 +160,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     ctr: Schema.Attribute.Integer;
     cvr: Schema.Attribute.Integer;
     eng_rate: Schema.Attribute.Integer;
+    engagements: Schema.Attribute.Integer;
     frequency: Schema.Attribute.Integer;
     impressions: Schema.Attribute.Integer;
     install_rate: Schema.Attribute.Integer;
