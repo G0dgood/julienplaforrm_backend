@@ -464,7 +464,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     singularName: 'campaign';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     budget_details: Schema.Attribute.Component<
@@ -516,7 +516,7 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     singularName: 'client';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     approver: Schema.Attribute.String;
@@ -586,7 +586,7 @@ export interface ApiPlatformListPlatformList
     singularName: 'platform-list';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     channel_type: Schema.Attribute.String;

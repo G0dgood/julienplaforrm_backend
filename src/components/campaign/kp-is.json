@@ -48,6 +48,9 @@
     },
     "avg_visit_time": {
       "type": "integer"
+    },
+    "reach": {
+      "type": "integer"
     }
   }
 }
