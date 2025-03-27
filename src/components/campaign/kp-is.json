@@ -84,6 +84,9 @@
     },
     "cpi": {
       "type": "integer"
+    },
+    "cpl": {
+      "type": "integer"
     }
   }
 }

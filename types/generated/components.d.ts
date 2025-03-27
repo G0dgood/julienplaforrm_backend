@@ -153,6 +153,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     cpc: Schema.Attribute.Integer;
     cpcv: Schema.Attribute.Integer;
     cpi: Schema.Attribute.Integer;
+    cpl: Schema.Attribute.Integer;
     cpm: Schema.Attribute.Integer;
     cpv: Schema.Attribute.Integer;
     ctr: Schema.Attribute.Integer;
