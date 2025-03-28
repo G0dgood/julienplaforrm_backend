@@ -8,91 +8,91 @@
   "options": {},
   "attributes": {
     "cpm": {
-      "type": "integer"
+      "type": "decimal"
     },
     "frequency": {
-      "type": "integer"
+      "type": "decimal"
     },
     "completion_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "eng_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "ctr": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cvr": {
-      "type": "integer"
+      "type": "decimal"
     },
     "avg_pages_visit": {
-      "type": "integer"
+      "type": "decimal"
     },
     "bounce_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "lead_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "off_funnel_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "clv_of_associated_product": {
-      "type": "integer"
+      "type": "decimal"
     },
     "open_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "click_to_land_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "avg_visit_time": {
-      "type": "integer"
+      "type": "decimal"
     },
     "reach": {
-      "type": "integer"
+      "type": "decimal"
     },
     "impressions": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpcv": {
-      "type": "integer"
+      "type": "decimal"
     },
     "vtr": {
-      "type": "integer"
+      "type": "decimal"
     },
     "video_views": {
-      "type": "integer"
+      "type": "decimal"
     },
     "completed_view": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpv": {
-      "type": "integer"
+      "type": "decimal"
     },
     "link_clicks": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpc": {
-      "type": "integer"
+      "type": "decimal"
     },
     "installs": {
-      "type": "integer"
+      "type": "decimal"
     },
     "install_rate": {
       "type": "integer"
     },
     "cpi": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpl": {
-      "type": "integer"
+      "type": "decimal"
     },
     "engagements": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpe": {
-      "type": "integer"
+      "type": "decimal"
     }
   }
 }
