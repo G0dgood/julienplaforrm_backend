@@ -9,6 +9,7 @@ export interface CampaignAdSet extends Struct.ComponentSchema {
   };
   attributes: {
     audience_type: Schema.Attribute.String;
+    budget: Schema.Attribute.Component<'campaign.individual-budget', false>;
     kpi: Schema.Attribute.Component<'campaign.kp-is', false>;
     name: Schema.Attribute.String;
     size: Schema.Attribute.String;
