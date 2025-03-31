@@ -7,7 +7,7 @@
     "displayName": "Buy objective"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "text": {

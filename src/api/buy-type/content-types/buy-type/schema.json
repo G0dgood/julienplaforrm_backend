@@ -7,7 +7,7 @@
     "displayName": "Buy type"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "text": {

@@ -407,7 +407,7 @@ export interface ApiBuyObjectiveBuyObjective
     singularName: 'buy-objective';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -435,7 +435,7 @@ export interface ApiBuyTypeBuyType extends Struct.CollectionTypeSchema {
     singularName: 'buy-type';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -464,7 +464,7 @@ export interface ApiCampaignObjectiveCampaignObjective
     singularName: 'campaign-objective';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -584,7 +584,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     singularName: 'comment';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     addcomment_as: Schema.Attribute.String;
