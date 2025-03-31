@@ -93,6 +93,90 @@
     },
     "cpe": {
       "type": "decimal"
+    },
+    "lands": {
+      "type": "decimal"
+    },
+    "bounced_visits": {
+      "type": "decimal"
+    },
+    "costbounce": {
+      "type": "decimal"
+    },
+    "lead_visits": {
+      "type": "decimal"
+    },
+    "costlead": {
+      "type": "decimal"
+    },
+    "off_funnel_visits": {
+      "type": "decimal"
+    },
+    "cost__off_funnel": {
+      "type": "decimal"
+    },
+    "forms_open": {
+      "type": "decimal"
+    },
+    "cost__opened_form": {
+      "type": "decimal"
+    },
+    "leads": {
+      "type": "decimal"
+    },
+    "cost__lead": {
+      "type": "decimal"
+    },
+    "conversions": {
+      "type": "decimal"
+    },
+    "costconversion": {
+      "type": "decimal"
+    },
+    "generated_revenue": {
+      "type": "decimal"
+    },
+    "return_on_ad_spent": {
+      "type": "decimal"
+    },
+    "add_to_cart_rate": {
+      "type": "decimal"
+    },
+    "add_to_carts": {
+      "type": "decimal"
+    },
+    "cpatc": {
+      "type": "decimal"
+    },
+    "payment_info_rate": {
+      "type": "decimal"
+    },
+    "payment_infos": {
+      "type": "decimal"
+    },
+    "cppi": {
+      "type": "decimal"
+    },
+    "purchase_rate": {
+      "type": "decimal"
+    },
+    "purchases": {
+      "type": "decimal"
+    },
+    "cpp": {
+      "type": "decimal"
+    },
+    "app_open": {
+      "type": "decimal"
+    },
+    "cost__app_open": {
+      "type": "decimal"
+    },
+    "conversion": {
+      "type": "decimal"
+    },
+    "cost__conversion": {
+      "type": "decimal"
     }
   }
 }
