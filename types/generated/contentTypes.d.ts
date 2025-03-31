@@ -455,6 +455,37 @@ export interface ApiBuyTypeBuyType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCampaignObjectiveCampaignObjective
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'campaign_objectives';
+  info: {
+    displayName: 'Campaign objective';
+    pluralName: 'campaign-objectives';
+    singularName: 'campaign-objective';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign-objective.campaign-objective'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
   collectionName: 'campaigns';
   info: {
@@ -1155,6 +1186,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::buy-objective.buy-objective': ApiBuyObjectiveBuyObjective;
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
+      'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
       'api::campaign.campaign': ApiCampaignCampaign;
       'api::client.client': ApiClientClient;
       'api::comment.comment': ApiCommentComment;

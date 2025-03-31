@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_objectives",
+  "info": {
+    "singularName": "campaign-objective",
+    "pluralName": "campaign-objectives",
+    "displayName": "Campaign objective"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
