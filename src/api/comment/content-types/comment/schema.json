@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "Comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "commentId": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "position": {
+      "type": "json"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "addcomment_as": {
+      "type": "string"
+    },
+    "replies": {
+      "type": "json"
+    }
+  }
+}

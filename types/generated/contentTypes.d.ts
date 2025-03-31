@@ -544,6 +544,40 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCommentComment extends Struct.CollectionTypeSchema {
+  collectionName: 'comments';
+  info: {
+    description: '';
+    displayName: 'Comment';
+    pluralName: 'comments';
+    singularName: 'comment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addcomment_as: Schema.Attribute.String;
+    approved: Schema.Attribute.Boolean;
+    commentId: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comment.comment'
+    > &
+      Schema.Attribute.Private;
+    position: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    replies: Schema.Attribute.JSON;
+    text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1123,6 +1157,7 @@ declare module '@strapi/strapi' {
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
       'api::campaign.campaign': ApiCampaignCampaign;
       'api::client.client': ApiClientClient;
+      'api::comment.comment': ApiCommentComment;
       'api::global.global': ApiGlobalGlobal;
       'api::platform-list.platform-list': ApiPlatformListPlatformList;
       'plugin::content-releases.release': PluginContentReleasesRelease;
