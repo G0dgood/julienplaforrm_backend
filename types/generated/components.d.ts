@@ -147,7 +147,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     add_to_cart_rate: Schema.Attribute.Decimal;
     add_to_carts: Schema.Attribute.Decimal;
     app_open: Schema.Attribute.Decimal;
-    avg_pages_visit: Schema.Attribute.Decimal;
+    avg_pages__visit: Schema.Attribute.Decimal;
     avg_visit_time: Schema.Attribute.Decimal;
     bounce_rate: Schema.Attribute.Decimal;
     bounced_visits: Schema.Attribute.Decimal;

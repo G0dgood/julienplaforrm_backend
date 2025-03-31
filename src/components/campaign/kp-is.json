@@ -25,7 +25,7 @@
     "cvr": {
       "type": "decimal"
     },
-    "avg_pages_visit": {
+    "avg_pages__visit": {
       "type": "decimal"
     },
     "bounce_rate": {
