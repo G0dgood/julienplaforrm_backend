@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audience_types",
+  "info": {
+    "singularName": "audience-type",
+    "pluralName": "audience-types",
+    "displayName": "Audience type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

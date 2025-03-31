@@ -398,6 +398,36 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAudienceTypeAudienceType
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'audience_types';
+  info: {
+    description: '';
+    displayName: 'Audience type';
+    pluralName: 'audience-types';
+    singularName: 'audience-type';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::audience-type.audience-type'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBuyObjectiveBuyObjective
   extends Struct.CollectionTypeSchema {
   collectionName: 'buy_objectives';
@@ -1184,6 +1214,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::audience-type.audience-type': ApiAudienceTypeAudienceType;
       'api::buy-objective.buy-objective': ApiBuyObjectiveBuyObjective;
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
       'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
