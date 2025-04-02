@@ -35,6 +35,41 @@
       "type": "component",
       "repeatable": false,
       "component": "campaign.individual-budget"
+    },
+    "messaging": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "streaming": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "in_game": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "e_commerce": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "ooh": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "broadcast": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
+    },
+    "print": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format-selection"
     }
   }
 }

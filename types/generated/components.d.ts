@@ -51,13 +51,19 @@ export interface CampaignChannelMix extends Struct.ComponentSchema {
     icon: 'command';
   };
   attributes: {
+    broadcast: Schema.Attribute.Component<'campaign.format-selection', true>;
     display_networks: Schema.Attribute.Component<
       'campaign.format-selection',
       true
     >;
+    e_commerce: Schema.Attribute.Component<'campaign.format-selection', true>;
     funnel_stage: Schema.Attribute.String;
     funnel_stage_timeline_end_date: Schema.Attribute.Date;
     funnel_stage_timeline_start_date: Schema.Attribute.Date;
+    in_game: Schema.Attribute.Component<'campaign.format-selection', true>;
+    messaging: Schema.Attribute.Component<'campaign.format-selection', true>;
+    ooh: Schema.Attribute.Component<'campaign.format-selection', true>;
+    print: Schema.Attribute.Component<'campaign.format-selection', true>;
     search_engines: Schema.Attribute.Component<
       'campaign.format-selection',
       true
@@ -67,6 +73,7 @@ export interface CampaignChannelMix extends Struct.ComponentSchema {
       'campaign.individual-budget',
       false
     >;
+    streaming: Schema.Attribute.Component<'campaign.format-selection', true>;
   };
 }
 
