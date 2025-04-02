@@ -40,6 +40,9 @@
     },
     "replies": {
       "type": "json"
+    },
+    "creator": {
+      "type": "json"
     }
   }
 }
