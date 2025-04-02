@@ -224,6 +224,22 @@ export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface CampaignReplies extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_replies';
+  info: {
+    displayName: 'replies';
+  };
+  attributes: {
+    authors: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::audience-type.audience-type'
+    >;
+    date: Schema.Attribute.String;
+    message: Schema.Attribute.String;
+    time: Schema.Attribute.String;
+  };
+}
+
 export interface CampaignType extends Struct.ComponentSchema {
   collectionName: 'components_campaign_types';
   info: {
@@ -308,6 +324,7 @@ declare module '@strapi/strapi' {
       'campaign.individual-budget': CampaignIndividualBudget;
       'campaign.kp-is': CampaignKpIs;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
+      'campaign.replies': CampaignReplies;
       'campaign.type': CampaignType;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

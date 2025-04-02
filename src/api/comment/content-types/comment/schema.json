@@ -26,8 +26,23 @@
     "addcomment_as": {
       "type": "string"
     },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "comments"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::audience-type.audience-type",
+      "inversedBy": "comments"
+    },
     "replies": {
-      "type": "json"
+      "displayName": "replies",
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.replies"
     }
   }
 }
