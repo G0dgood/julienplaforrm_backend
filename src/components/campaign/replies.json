@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_campaign_replies",
+  "info": {
+    "displayName": "replies"
+  },
+  "options": {},
+  "attributes": {
+    "authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::audience-type.audience-type"
+    },
+    "message": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    }
+  }
+}

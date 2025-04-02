@@ -411,6 +411,7 @@ export interface ApiAudienceTypeAudienceType
     draftAndPublish: false;
   };
   attributes: {
+    comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -546,6 +547,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'campaign.client-selection',
       false
     >;
+    comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -619,6 +621,11 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
   attributes: {
     addcomment_as: Schema.Attribute.String;
     approved: Schema.Attribute.Boolean;
+    author: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::audience-type.audience-type'
+    >;
+    campaign: Schema.Attribute.Relation<'manyToOne', 'api::campaign.campaign'>;
     commentId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -631,7 +638,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     position: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
-    replies: Schema.Attribute.JSON;
+    replies: Schema.Attribute.Component<'campaign.replies', true>;
     text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
