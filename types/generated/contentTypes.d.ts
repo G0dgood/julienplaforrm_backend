@@ -623,7 +623,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     approved: Schema.Attribute.Boolean;
     author: Schema.Attribute.Relation<
       'manyToOne',
-      'api::audience-type.audience-type'
+      'plugin::users-permissions.user'
     >;
     campaign: Schema.Attribute.Relation<'manyToOne', 'api::campaign.campaign'>;
     commentId: Schema.Attribute.String;
@@ -638,7 +638,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     position: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
-    replies: Schema.Attribute.Component<'campaign.replies', true>;
+    replies: Schema.Attribute.JSON;
     text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1169,6 +1169,7 @@ export interface PluginUsersPermissionsUser
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
