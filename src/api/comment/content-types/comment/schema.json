@@ -35,14 +35,11 @@
     "author": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::audience-type.audience-type",
+      "target": "plugin::users-permissions.user",
       "inversedBy": "comments"
     },
     "replies": {
-      "displayName": "replies",
-      "type": "component",
-      "repeatable": true,
-      "component": "campaign.replies"
+      "type": "json"
     }
   }
 }
