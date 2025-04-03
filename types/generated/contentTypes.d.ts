@@ -548,6 +548,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       false
     >;
     comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
+    copyCount: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

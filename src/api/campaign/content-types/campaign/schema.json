@@ -69,6 +69,10 @@
     },
     "progress_percent": {
       "type": "integer"
+    },
+    "copyCount": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
