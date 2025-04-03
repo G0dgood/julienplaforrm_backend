@@ -66,6 +66,9 @@
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "campaign"
+    },
+    "progress_percent": {
+      "type": "integer"
     }
   }
 }

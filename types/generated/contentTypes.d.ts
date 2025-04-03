@@ -563,6 +563,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'campaign.media-plan-details',
       false
     >;
+    progress_percent: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
