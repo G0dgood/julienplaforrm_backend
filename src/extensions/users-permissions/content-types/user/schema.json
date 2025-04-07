@@ -77,6 +77,12 @@
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "author"
+    },
+    "purchase_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::purchase-order.purchase-order",
+      "mappedBy": "financial_responsible"
     }
   }
 }

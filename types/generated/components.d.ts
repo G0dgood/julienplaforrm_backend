@@ -212,6 +212,19 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
   };
 }
 
+export interface CampaignMediaPLans extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_media_p_lans';
+  info: {
+    displayName: 'Media PLans';
+    icon: 'book';
+  };
+  attributes: {
+    amount: Schema.Attribute.Integer;
+    campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
+    media_amount: Schema.Attribute.String;
+  };
+}
+
 export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
   collectionName: 'components_campaign_media_plan_details';
   info: {
@@ -323,6 +336,7 @@ declare module '@strapi/strapi' {
       'campaign.format-selection': CampaignFormatSelection;
       'campaign.individual-budget': CampaignIndividualBudget;
       'campaign.kp-is': CampaignKpIs;
+      'campaign.media-p-lans': CampaignMediaPLans;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
       'campaign.replies': CampaignReplies;
       'campaign.type': CampaignType;

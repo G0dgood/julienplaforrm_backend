@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_campaign_media_p_lans",
+  "info": {
+    "displayName": "Media PLans",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "campaign": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign.campaign"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "media_amount": {
+      "type": "string"
+    }
+  }
+}

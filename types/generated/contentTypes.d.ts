@@ -602,6 +602,10 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    purchase_orders: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::purchase-order.purchase-order'
+    >;
     responsible: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -708,6 +712,50 @@ export interface ApiPlatformListPlatformList
     platform_name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPurchaseOrderPurchaseOrder
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'purchase_orders';
+  info: {
+    displayName: 'Purchase order';
+    pluralName: 'purchase-orders';
+    singularName: 'purchase-order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    assigned_media_plans: Schema.Attribute.Component<
+      'campaign.media-p-lans',
+      true
+    >;
+    client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
+    client_responsible: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    financial_responsible: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::purchase-order.purchase-order'
+    > &
+      Schema.Attribute.Private;
+    PO_currency: Schema.Attribute.String;
+    PO_number: Schema.Attribute.Integer;
+    PO_total_amount: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1196,6 +1244,10 @@ export interface PluginUsersPermissionsUser
       }>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    purchase_orders: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::purchase-order.purchase-order'
+    >;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
     role: Schema.Attribute.Relation<
       'manyToOne',
@@ -1234,6 +1286,7 @@ declare module '@strapi/strapi' {
       'api::comment.comment': ApiCommentComment;
       'api::global.global': ApiGlobalGlobal;
       'api::platform-list.platform-list': ApiPlatformListPlatformList;
+      'api::purchase-order.purchase-order': ApiPurchaseOrderPurchaseOrder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

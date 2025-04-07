@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_orders",
+  "info": {
+    "singularName": "purchase-order",
+    "pluralName": "purchase-orders",
+    "displayName": "Purchase order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "purchase_orders"
+    },
+    "client_responsible": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "purchase_orders"
+    },
+    "financial_responsible": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "purchase_orders"
+    },
+    "PO_number": {
+      "type": "integer"
+    },
+    "PO_currency": {
+      "type": "string"
+    },
+    "PO_total_amount": {
+      "type": "integer"
+    },
+    "assigned_media_plans": {
+      "displayName": "Media PLans",
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.media-p-lans"
+    }
+  }
+}
