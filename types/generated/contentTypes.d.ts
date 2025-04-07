@@ -727,7 +727,7 @@ export interface ApiPurchaseOrderPurchaseOrder
     singularName: 'purchase-order';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     assigned_media_plans: Schema.Attribute.Component<
@@ -1256,7 +1256,9 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user_type: Schema.Attribute.Enumeration<['admin', 'client']>;
+    user_type: Schema.Attribute.Enumeration<
+      ['admin', 'client', 'agency_creator', 'agency_approver']
+    >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

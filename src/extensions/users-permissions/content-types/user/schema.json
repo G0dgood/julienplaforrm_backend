@@ -69,7 +69,9 @@
       "type": "enumeration",
       "enum": [
         "admin",
-        "client"
+        "client",
+        "agency_creator",
+        "agency_approver"
       ]
     },
     "comments": {
