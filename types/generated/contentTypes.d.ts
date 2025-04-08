@@ -722,6 +722,7 @@ export interface ApiPurchaseOrderPurchaseOrder
   extends Struct.CollectionTypeSchema {
   collectionName: 'purchase_orders';
   info: {
+    description: '';
     displayName: 'Purchase order';
     pluralName: 'purchase-orders';
     singularName: 'purchase-order';

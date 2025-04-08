@@ -215,13 +215,14 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
 export interface CampaignMediaPLans extends Struct.ComponentSchema {
   collectionName: 'components_campaign_media_p_lans';
   info: {
+    description: '';
     displayName: 'Media PLans';
     icon: 'book';
   };
   attributes: {
     amount: Schema.Attribute.Integer;
+    amount_type: Schema.Attribute.String;
     campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
-    media_amount: Schema.Attribute.String;
   };
 }
 
