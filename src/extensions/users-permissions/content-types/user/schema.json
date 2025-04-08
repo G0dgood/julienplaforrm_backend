@@ -85,6 +85,12 @@
       "relation": "oneToMany",
       "target": "api::purchase-order.purchase-order",
       "mappedBy": "financial_responsible"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client",
+      "inversedBy": "user"
     }
   }
 }
