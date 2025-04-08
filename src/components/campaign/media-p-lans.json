@@ -17,6 +17,9 @@
     },
     "amount_type": {
       "type": "string"
+    },
+    "percentage": {
+      "type": "decimal"
     }
   }
 }

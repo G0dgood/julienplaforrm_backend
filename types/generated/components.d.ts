@@ -223,6 +223,7 @@ export interface CampaignMediaPLans extends Struct.ComponentSchema {
     amount: Schema.Attribute.Integer;
     amount_type: Schema.Attribute.String;
     campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
+    percentage: Schema.Attribute.Decimal;
   };
 }
 
