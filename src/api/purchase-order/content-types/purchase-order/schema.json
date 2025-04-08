@@ -43,6 +43,16 @@
       "type": "component",
       "repeatable": true,
       "component": "campaign.media-p-lans"
+    },
+    "PO_status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "reconcilled",
+        "partially_paid",
+        "fully_paid"
+      ],
+      "default": "open"
     }
   }
 }
