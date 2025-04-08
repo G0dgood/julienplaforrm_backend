@@ -230,10 +230,12 @@ export interface CampaignMediaPLans extends Struct.ComponentSchema {
 export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
   collectionName: 'components_campaign_media_plan_details';
   info: {
+    description: '';
     displayName: 'Media_plan_details';
     icon: 'cursor';
   };
   attributes: {
+    client_approver: Schema.Attribute.String;
     internal_approver: Schema.Attribute.String;
     plan_name: Schema.Attribute.String;
   };

@@ -2,7 +2,8 @@
   "collectionName": "components_campaign_media_plan_details",
   "info": {
     "displayName": "Media_plan_details",
-    "icon": "cursor"
+    "icon": "cursor",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,6 +11,9 @@
       "type": "string"
     },
     "internal_approver": {
+      "type": "string"
+    },
+    "client_approver": {
       "type": "string"
     }
   }
