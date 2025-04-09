@@ -91,6 +91,12 @@
       "relation": "oneToOne",
       "target": "api::client.client",
       "inversedBy": "user"
+    },
+    "campaigns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign.campaign",
+      "mappedBy": "user"
     }
   }
 }
