@@ -636,6 +636,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
       'plugin::users-permissions.user'
     >;
     campaign: Schema.Attribute.Relation<'manyToOne', 'api::campaign.campaign'>;
+    client_commentID: Schema.Attribute.String;
     commentId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
