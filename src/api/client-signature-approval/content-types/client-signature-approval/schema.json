@@ -4,7 +4,8 @@
   "info": {
     "singularName": "client-signature-approval",
     "pluralName": "client-signature-approvals",
-    "displayName": "ClientSignatureApproval"
+    "displayName": "ClientSignatureApproval",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,9 @@
     },
     "fullname": {
       "type": "json"
+    },
+    "clientId": {
+      "type": "string"
     }
   }
 }
