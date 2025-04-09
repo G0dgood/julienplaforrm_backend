@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_signature_approvals",
+  "info": {
+    "singularName": "client-signature-approval",
+    "pluralName": "client-signature-approvals",
+    "displayName": "ClientSignatureApproval"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dateSigned": {
+      "type": "string"
+    },
+    "initials": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "fullname": {
+      "type": "json"
+    }
+  }
+}
