@@ -43,6 +43,9 @@
     },
     "creator": {
       "type": "json"
+    },
+    "client_commentID": {
+      "type": "string"
     }
   }
 }
