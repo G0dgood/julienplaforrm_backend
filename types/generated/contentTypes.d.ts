@@ -580,6 +580,7 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
   extends Struct.CollectionTypeSchema {
   collectionName: 'client_signature_approvals';
   info: {
+    description: '';
     displayName: 'ClientSignatureApproval';
     pluralName: 'client-signature-approvals';
     singularName: 'client-signature-approval';
@@ -588,6 +589,7 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
     draftAndPublish: true;
   };
   attributes: {
+    clientId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
