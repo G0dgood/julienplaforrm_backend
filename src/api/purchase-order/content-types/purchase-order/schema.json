@@ -30,7 +30,8 @@
       "inversedBy": "purchase_orders"
     },
     "PO_number": {
-      "type": "integer"
+      "type": "integer",
+      "unique": true
     },
     "PO_currency": {
       "type": "string"

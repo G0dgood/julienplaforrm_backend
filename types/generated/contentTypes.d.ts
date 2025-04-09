@@ -763,7 +763,7 @@ export interface ApiPurchaseOrderPurchaseOrder
     > &
       Schema.Attribute.Private;
     PO_currency: Schema.Attribute.String;
-    PO_number: Schema.Attribute.Integer;
+    PO_number: Schema.Attribute.Integer & Schema.Attribute.Unique;
     PO_status: Schema.Attribute.Enumeration<
       ['open', 'reconcilled', 'partially_paid', 'fully_paid']
     > &
