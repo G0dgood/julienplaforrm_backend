@@ -20,14 +20,14 @@
     "isSignature": {
       "type": "boolean"
     },
-    "signature": {
-      "type": "blocks"
-    },
     "clientId": {
       "type": "integer"
     },
     "dateSigned": {
       "type": "date"
+    },
+    "signature": {
+      "type": "string"
     }
   }
 }

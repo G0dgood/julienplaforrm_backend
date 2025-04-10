@@ -604,7 +604,7 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    signature: Schema.Attribute.Blocks;
+    signature: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
