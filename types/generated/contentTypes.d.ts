@@ -554,6 +554,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     custom_funnels: Schema.Attribute.JSON;
     funnel_stages: Schema.Attribute.JSON;
+    funnel_type: Schema.Attribute.String;
     goal_level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
