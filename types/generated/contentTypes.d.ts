@@ -589,11 +589,11 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
     draftAndPublish: true;
   };
   attributes: {
-    clientId: Schema.Attribute.String;
+    clientId: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    dateSigned: Schema.Attribute.String;
+    dateSigned: Schema.Attribute.Date;
     fullname: Schema.Attribute.String;
     initials: Schema.Attribute.String;
     isSignature: Schema.Attribute.Boolean;
@@ -604,7 +604,7 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    signature: Schema.Attribute.String;
+    signature: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
