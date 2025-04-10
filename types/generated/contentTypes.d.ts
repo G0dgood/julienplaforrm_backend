@@ -552,6 +552,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    custom_funnels: Schema.Attribute.JSON;
     funnel_stages: Schema.Attribute.JSON;
     goal_level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
