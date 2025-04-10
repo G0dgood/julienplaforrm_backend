@@ -11,16 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "dateSigned": {
-      "type": "string"
-    },
     "initials": {
-      "type": "string"
-    },
-    "signature": {
-      "type": "string"
-    },
-    "clientId": {
       "type": "string"
     },
     "fullname": {
@@ -28,6 +19,15 @@
     },
     "isSignature": {
       "type": "boolean"
+    },
+    "signature": {
+      "type": "blocks"
+    },
+    "clientId": {
+      "type": "integer"
+    },
+    "dateSigned": {
+      "type": "date"
     }
   }
 }
