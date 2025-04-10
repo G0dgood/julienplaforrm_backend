@@ -594,8 +594,9 @@ export interface ApiClientSignatureApprovalClientSignatureApproval
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     dateSigned: Schema.Attribute.String;
-    fullname: Schema.Attribute.JSON;
+    fullname: Schema.Attribute.String;
     initials: Schema.Attribute.String;
+    isSignature: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

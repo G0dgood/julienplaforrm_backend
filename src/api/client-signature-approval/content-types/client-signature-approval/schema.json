@@ -20,11 +20,14 @@
     "signature": {
       "type": "string"
     },
-    "fullname": {
-      "type": "json"
-    },
     "clientId": {
       "type": "string"
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "isSignature": {
+      "type": "boolean"
     }
   }
 }
