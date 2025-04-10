@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_signature_approvals",
+  "info": {
+    "singularName": "client-signature-approval",
+    "pluralName": "client-signature-approvals",
+    "displayName": "ClientSignatureApproval",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "initials": {
+      "type": "string"
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "isSignature": {
+      "type": "boolean"
+    },
+    "signature": {
+      "type": "blocks"
+    },
+    "clientId": {
+      "type": "integer"
+    },
+    "dateSigned": {
+      "type": "date"
+    }
+  }
+}

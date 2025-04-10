@@ -577,6 +577,41 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClientSignatureApprovalClientSignatureApproval
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'client_signature_approvals';
+  info: {
+    description: '';
+    displayName: 'ClientSignatureApproval';
+    pluralName: 'client-signature-approvals';
+    singularName: 'client-signature-approval';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clientId: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dateSigned: Schema.Attribute.Date;
+    fullname: Schema.Attribute.String;
+    initials: Schema.Attribute.String;
+    isSignature: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-signature-approval.client-signature-approval'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    signature: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiClientClient extends Struct.CollectionTypeSchema {
   collectionName: 'clients';
   info: {
@@ -1301,6 +1336,7 @@ declare module '@strapi/strapi' {
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
       'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
       'api::campaign.campaign': ApiCampaignCampaign;
+      'api::client-signature-approval.client-signature-approval': ApiClientSignatureApprovalClientSignatureApproval;
       'api::client.client': ApiClientClient;
       'api::comment.comment': ApiCommentComment;
       'api::global.global': ApiGlobalGlobal;
