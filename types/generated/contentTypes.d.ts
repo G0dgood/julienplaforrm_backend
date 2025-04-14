@@ -707,6 +707,7 @@ export interface ApiGeneralCommentGeneralComment
   extends Struct.CollectionTypeSchema {
   collectionName: 'general_comments';
   info: {
+    description: '';
     displayName: 'generalComment';
     pluralName: 'general-comments';
     singularName: 'general-comment';
@@ -715,7 +716,9 @@ export interface ApiGeneralCommentGeneralComment
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.JSON;
     campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
+    commentId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
