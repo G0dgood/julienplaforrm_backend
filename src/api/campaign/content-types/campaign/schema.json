@@ -85,6 +85,12 @@
     },
     "funnel_type": {
       "type": "string"
+    },
+    "general_comment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::general-comment.general-comment",
+      "mappedBy": "campaign"
     }
   }
 }

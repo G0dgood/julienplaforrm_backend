@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "general_comments",
+  "info": {
+    "singularName": "general-comment",
+    "pluralName": "general-comments",
+    "displayName": "generalComment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "generalComment": {
+      "type": "text"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "general_comment"
+    }
+  }
+}

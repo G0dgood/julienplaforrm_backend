@@ -555,6 +555,10 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     custom_funnels: Schema.Attribute.JSON;
     funnel_stages: Schema.Attribute.JSON;
     funnel_type: Schema.Attribute.String;
+    general_comment: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::general-comment.general-comment'
+    >;
     goal_level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -693,6 +697,36 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     replies: Schema.Attribute.JSON;
     text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGeneralCommentGeneralComment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'general_comments';
+  info: {
+    displayName: 'generalComment';
+    pluralName: 'general-comments';
+    singularName: 'general-comment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    generalComment: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-comment.general-comment'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1340,6 +1374,7 @@ declare module '@strapi/strapi' {
       'api::client-signature-approval.client-signature-approval': ApiClientSignatureApprovalClientSignatureApproval;
       'api::client.client': ApiClientClient;
       'api::comment.comment': ApiCommentComment;
+      'api::general-comment.general-comment': ApiGeneralCommentGeneralComment;
       'api::global.global': ApiGlobalGlobal;
       'api::platform-list.platform-list': ApiPlatformListPlatformList;
       'api::purchase-order.purchase-order': ApiPurchaseOrderPurchaseOrder;
