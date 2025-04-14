@@ -4,7 +4,8 @@
   "info": {
     "singularName": "general-comment",
     "pluralName": "general-comments",
-    "displayName": "generalComment"
+    "displayName": "generalComment",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,12 @@
       "relation": "oneToOne",
       "target": "api::campaign.campaign",
       "inversedBy": "general_comment"
+    },
+    "author": {
+      "type": "json"
+    },
+    "commentId": {
+      "type": "string"
     }
   }
 }
