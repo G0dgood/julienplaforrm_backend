@@ -25,6 +25,11 @@
       "type": "component",
       "repeatable": false,
       "component": "campaign.individual-budget"
+    },
+    "format": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.format"
     }
   }
 }
