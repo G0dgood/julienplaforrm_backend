@@ -31,16 +31,31 @@ export interface CampaignBudgetDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface CampaignBudgetFees extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_budget_fees';
+  info: {
+    displayName: 'Budget Fees';
+    icon: 'bold';
+  };
+  attributes: {
+    fee_type: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface CampaignCampaignBudget extends Struct.ComponentSchema {
   collectionName: 'components_campaign_campaign_budgets';
   info: {
+    description: '';
     displayName: 'Campaign_budget';
     icon: 'briefcase';
   };
   attributes: {
     amount: Schema.Attribute.String;
+    budget_fees: Schema.Attribute.Component<'campaign.budget-fees', true>;
     budget_type: Schema.Attribute.String;
     currency: Schema.Attribute.String;
+    sub_budget_type: Schema.Attribute.String;
   };
 }
 
@@ -334,6 +349,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'campaign.ad-set': CampaignAdSet;
       'campaign.budget-details': CampaignBudgetDetails;
+      'campaign.budget-fees': CampaignBudgetFees;
       'campaign.campaign-budget': CampaignCampaignBudget;
       'campaign.channel-mix': CampaignChannelMix;
       'campaign.client-selection': CampaignClientSelection;

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_campaign_budget_fees",
+  "info": {
+    "displayName": "Budget Fees",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "fee_type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}
