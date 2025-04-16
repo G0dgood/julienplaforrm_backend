@@ -30,6 +30,9 @@
       "type": "component",
       "repeatable": true,
       "component": "campaign.format"
+    },
+    "extraAudience": {
+      "type": "json"
     }
   }
 }
