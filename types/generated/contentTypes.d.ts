@@ -398,6 +398,36 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAggregatedKpiAggregatedKpi
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'aggregated_kpis';
+  info: {
+    displayName: 'AggregatedKPIs';
+    pluralName: 'aggregated-kpis';
+    singularName: 'aggregated-kpi';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aggregated_kpis: Schema.Attribute.JSON;
+    campaign_id: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::aggregated-kpi.aggregated-kpi'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAudienceTypeAudienceType
   extends Struct.CollectionTypeSchema {
   collectionName: 'audience_types';
@@ -1369,6 +1399,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::aggregated-kpi.aggregated-kpi': ApiAggregatedKpiAggregatedKpi;
       'api::audience-type.audience-type': ApiAudienceTypeAudienceType;
       'api::buy-objective.buy-objective': ApiBuyObjectiveBuyObjective;
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
