@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aggregated_kpis",
+  "info": {
+    "singularName": "aggregated-kpi",
+    "pluralName": "aggregated-kpis",
+    "displayName": "AggregatedKPIs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "campaign_id": {
+      "type": "string"
+    },
+    "aggregated_kpis": {
+      "type": "json"
+    }
+  }
+}
