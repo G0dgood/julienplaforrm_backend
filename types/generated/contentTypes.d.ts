@@ -402,6 +402,7 @@ export interface ApiAggregatedKpiAggregatedKpi
   extends Struct.CollectionTypeSchema {
   collectionName: 'aggregated_kpis';
   info: {
+    description: '';
     displayName: 'AggregatedKPIs';
     pluralName: 'aggregated-kpis';
     singularName: 'aggregated-kpi';
@@ -415,6 +416,7 @@ export interface ApiAggregatedKpiAggregatedKpi
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    isCreated: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
