@@ -80,7 +80,7 @@
       "type": "decimal"
     },
     "install_rate": {
-      "type": "integer"
+      "type": "decimal"
     },
     "cpi": {
       "type": "decimal"
