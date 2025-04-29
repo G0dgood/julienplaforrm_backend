@@ -1379,7 +1379,14 @@ export interface PluginUsersPermissionsUser
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     user_type: Schema.Attribute.Enumeration<
-      ['admin', 'client', 'agency_creator', 'agency_approver']
+      [
+        'admin',
+        'client',
+        'agency_creator',
+        'agency_approver',
+        'client_approver',
+        'financial_approver',
+      ]
     >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
