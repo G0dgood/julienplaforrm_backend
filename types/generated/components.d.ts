@@ -208,7 +208,7 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     frequency: Schema.Attribute.Decimal;
     generated_revenue: Schema.Attribute.Decimal;
     impressions: Schema.Attribute.Decimal;
-    install_rate: Schema.Attribute.Integer;
+    install_rate: Schema.Attribute.Decimal;
     installs: Schema.Attribute.Decimal;
     lands: Schema.Attribute.Decimal;
     lead_rate: Schema.Attribute.Decimal;
