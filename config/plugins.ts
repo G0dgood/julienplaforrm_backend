@@ -6,7 +6,8 @@ export default ({ env }) => ({
           apiUrl: env('SUPABASE_API_URL'),
           apiKey: env('SUPABASE_API_KEY'),
           bucket: env('SUPABASE_BUCKET'),
-        }
+        },
+        sizeLimit: 250 * 1024 * 1024,
       },
     }, 
   })
