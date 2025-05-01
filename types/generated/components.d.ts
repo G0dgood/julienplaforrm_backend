@@ -59,6 +59,7 @@ export interface CampaignCampaignBudget extends Struct.ComponentSchema {
     budget_fees: Schema.Attribute.Component<'campaign.budget-fees', true>;
     budget_type: Schema.Attribute.String;
     currency: Schema.Attribute.String;
+    level: Schema.Attribute.String;
     sub_budget_type: Schema.Attribute.String;
   };
 }
