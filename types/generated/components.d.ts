@@ -35,11 +35,14 @@ export interface CampaignBudgetDetails extends Struct.ComponentSchema {
 export interface CampaignBudgetFees extends Struct.ComponentSchema {
   collectionName: 'components_campaign_budget_fees';
   info: {
+    description: '';
     displayName: 'Budget Fees';
     icon: 'bold';
   };
   attributes: {
     fee_type: Schema.Attribute.String;
+    isPercent: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    percentValue: Schema.Attribute.String;
     value: Schema.Attribute.String;
   };
 }
