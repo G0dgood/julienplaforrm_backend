@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_campaign_kpi_jsons",
+  "info": {
+    "displayName": "KPI_JSON",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "kpi": {
+      "type": "json"
+    }
+  }
+}
