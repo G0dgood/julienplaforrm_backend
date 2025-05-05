@@ -39,9 +39,7 @@
       "component": "campaign.individual-budget"
     },
     "kpi": {
-      "type": "component",
-      "repeatable": false,
-      "component": "campaign.kp-is"
+      "type": "json"
     }
   }
 }

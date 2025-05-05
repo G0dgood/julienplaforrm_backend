@@ -16,11 +16,6 @@
     "size": {
       "type": "string"
     },
-    "kpi": {
-      "type": "component",
-      "repeatable": false,
-      "component": "campaign.kp-is"
-    },
     "budget": {
       "type": "component",
       "repeatable": false,
@@ -32,6 +27,9 @@
       "component": "campaign.format"
     },
     "extra_audiences": {
+      "type": "json"
+    },
+    "kpi": {
       "type": "json"
     }
   }
