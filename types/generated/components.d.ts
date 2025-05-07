@@ -12,7 +12,7 @@ export interface CampaignAdSet extends Struct.ComponentSchema {
     budget: Schema.Attribute.Component<'campaign.individual-budget', false>;
     extra_audiences: Schema.Attribute.JSON;
     format: Schema.Attribute.Component<'campaign.format', true>;
-    kpi: Schema.Attribute.Component<'campaign.kp-is', false>;
+    kpi: Schema.Attribute.JSON;
     name: Schema.Attribute.String;
     size: Schema.Attribute.String;
   };
@@ -145,7 +145,7 @@ export interface CampaignFormatSelection extends Struct.ComponentSchema {
     campaign_end_date: Schema.Attribute.Date;
     campaign_start_date: Schema.Attribute.Date;
     format: Schema.Attribute.Component<'campaign.format', true>;
-    kpi: Schema.Attribute.Component<'campaign.kp-is', false>;
+    kpi: Schema.Attribute.JSON;
     objective_type: Schema.Attribute.String;
     platform_name: Schema.Attribute.String;
   };
@@ -230,6 +230,17 @@ export interface CampaignKpIs extends Struct.ComponentSchema {
     return_on_ad_spent: Schema.Attribute.Decimal;
     video_views: Schema.Attribute.Decimal;
     vtr: Schema.Attribute.Decimal;
+  };
+}
+
+export interface CampaignKpiJson extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_kpi_jsons';
+  info: {
+    displayName: 'KPI_JSON';
+    icon: 'book';
+  };
+  attributes: {
+    kpi: Schema.Attribute.JSON;
   };
 }
 
@@ -362,6 +373,7 @@ declare module '@strapi/strapi' {
       'campaign.format-selection': CampaignFormatSelection;
       'campaign.individual-budget': CampaignIndividualBudget;
       'campaign.kp-is': CampaignKpIs;
+      'campaign.kpi-json': CampaignKpiJson;
       'campaign.media-p-lans': CampaignMediaPLans;
       'campaign.media-plan-details': CampaignMediaPlanDetails;
       'campaign.replies': CampaignReplies;
