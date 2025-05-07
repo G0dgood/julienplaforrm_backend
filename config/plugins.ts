@@ -1,13 +1,27 @@
 export default ({ env }) => ({
+    // upload: {
+    //   config: {
+    //     provider: "strapi-provider-upload-supabase",
+    //     providerOptions: {
+    //       apiUrl: env('SUPABASE_API_URL'),
+    //       apiKey: env('SUPABASE_API_KEY'),
+    //       bucket: env('SUPABASE_BUCKET'),
+    //     },
+    //     sizeLimit: 250 * 1024 * 1024,
+    //   },
+    // }, 
     upload: {
       config: {
-        provider: "strapi-provider-upload-supabase",
+        provider: 'cloudinary',
         providerOptions: {
-          apiUrl: env('SUPABASE_API_URL'),
-          apiKey: env('SUPABASE_API_KEY'),
-          bucket: env('SUPABASE_BUCKET'),
+          cloud_name: env('CLOUDINARY_NAME'),
+          api_key: env('CLOUDINARY_KEY'),
+          api_secret: env('CLOUDINARY_SECRET'),
         },
-        sizeLimit: 250 * 1024 * 1024,
+        actionOptions: {
+          upload: {},
+          delete: {},
+        },
       },
-    }, 
+    },
   })
