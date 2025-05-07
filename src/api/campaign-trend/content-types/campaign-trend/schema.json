@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_trends",
+  "info": {
+    "singularName": "campaign-trend",
+    "pluralName": "campaign-trends",
+    "displayName": "campaignTrend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "campaign_id": {
+      "type": "string"
+    },
+    "trend": {
+      "type": "json"
+    }
+  }
+}
