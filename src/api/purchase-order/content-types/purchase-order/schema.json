@@ -31,7 +31,7 @@
     },
     "PO_number": {
       "type": "integer",
-      "unique": true
+      "unique": false
     },
     "PO_currency": {
       "type": "string"
