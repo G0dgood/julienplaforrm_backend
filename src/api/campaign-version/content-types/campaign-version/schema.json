@@ -4,17 +4,18 @@
   "info": {
     "singularName": "campaign-version",
     "pluralName": "campaign-versions",
-    "displayName": "CampaignVersion"
+    "displayName": "CampaignVersion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "campaign_id": {
-      "type": "string"
-    },
     "version": {
       "type": "json"
+    },
+    "campaign_id": {
+      "type": "uid"
     }
   }
 }
