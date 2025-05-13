@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_versions",
+  "info": {
+    "singularName": "campaign-version",
+    "pluralName": "campaign-versions",
+    "displayName": "CampaignVersion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "campaign_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "json"
+    }
+  }
+}

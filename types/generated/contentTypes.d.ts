@@ -580,6 +580,36 @@ export interface ApiCampaignTrendCampaignTrend
   };
 }
 
+export interface ApiCampaignVersionCampaignVersion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'campaign_versions';
+  info: {
+    displayName: 'CampaignVersion';
+    pluralName: 'campaign-versions';
+    singularName: 'campaign-version';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campaign_id: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign-version.campaign-version'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    version: Schema.Attribute.JSON;
+  };
+}
+
 export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
   collectionName: 'campaigns';
   info: {
@@ -1445,6 +1475,7 @@ declare module '@strapi/strapi' {
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
       'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
       'api::campaign-trend.campaign-trend': ApiCampaignTrendCampaignTrend;
+      'api::campaign-version.campaign-version': ApiCampaignVersionCampaignVersion;
       'api::campaign.campaign': ApiCampaignCampaign;
       'api::client-signature-approval.client-signature-approval': ApiClientSignatureApprovalClientSignatureApproval;
       'api::client.client': ApiClientClient;
