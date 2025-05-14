@@ -15,7 +15,7 @@
       "type": "json"
     },
     "campaign_id": {
-      "type": "uid"
+      "type": "string"
     }
   }
 }
