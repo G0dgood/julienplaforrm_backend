@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "campaign_versions",
+  "collectionName": "client_campaign_versions",
   "info": {
-    "singularName": "campaign-version",
-    "pluralName": "campaign-versions",
-    "displayName": "CampaignVersion"
+    "singularName": "client-campaign-version",
+    "pluralName": "client-campaign-versions",
+    "displayName": "ClientCampaignVersion"
   },
   "options": {
     "draftAndPublish": true
