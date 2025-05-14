@@ -4,7 +4,8 @@
   "info": {
     "singularName": "client-campaign-version",
     "pluralName": "client-campaign-versions",
-    "displayName": "ClientCampaignVersion"
+    "displayName": "ClientCampaignVersion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,9 @@
     },
     "version": {
       "type": "json"
+    },
+    "clientId": {
+      "type": "string"
     }
   }
 }

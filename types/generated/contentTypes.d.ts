@@ -649,6 +649,7 @@ export interface ApiClientCampaignVersionClientCampaignVersion
   extends Struct.CollectionTypeSchema {
   collectionName: 'client_campaign_versions';
   info: {
+    description: '';
     displayName: 'ClientCampaignVersion';
     pluralName: 'client-campaign-versions';
     singularName: 'client-campaign-version';
@@ -658,6 +659,7 @@ export interface ApiClientCampaignVersionClientCampaignVersion
   };
   attributes: {
     campaign_id: Schema.Attribute.String;
+    clientId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
