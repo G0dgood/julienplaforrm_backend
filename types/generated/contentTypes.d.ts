@@ -593,7 +593,7 @@ export interface ApiCampaignVersionCampaignVersion
     draftAndPublish: true;
   };
   attributes: {
-    campaign_id: Schema.Attribute.UID;
+    campaign_id: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
