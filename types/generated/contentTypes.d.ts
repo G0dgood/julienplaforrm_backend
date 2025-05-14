@@ -584,7 +584,6 @@ export interface ApiCampaignVersionCampaignVersion
   extends Struct.CollectionTypeSchema {
   collectionName: 'campaign_versions';
   info: {
-    description: '';
     displayName: 'CampaignVersion';
     pluralName: 'campaign-versions';
     singularName: 'campaign-version';
