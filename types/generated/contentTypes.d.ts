@@ -604,6 +604,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     campaign_summary_comment: Schema.Attribute.Text;
     campaign_timeline_end_date: Schema.Attribute.Date;
     campaign_timeline_start_date: Schema.Attribute.Date;
+    campaign_version: Schema.Attribute.String;
     channel_mix: Schema.Attribute.Component<'campaign.channel-mix', true>;
     client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
     client_selection: Schema.Attribute.Component<
