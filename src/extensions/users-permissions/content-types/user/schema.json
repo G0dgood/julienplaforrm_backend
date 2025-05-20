@@ -96,9 +96,9 @@
     },
     "clients": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::client.client",
-      "mappedBy": "user"
+      "inversedBy": "users"
     }
   }
 }

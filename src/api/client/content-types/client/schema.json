@@ -47,11 +47,11 @@
       "target": "api::purchase-order.purchase-order",
       "mappedBy": "client"
     },
-    "user": {
+    "users": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "clients"
+      "mappedBy": "clients"
     }
   }
 }
