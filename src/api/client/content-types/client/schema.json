@@ -17,12 +17,6 @@
     "client_emails": {
       "type": "json"
     },
-    "responsible": {
-      "type": "string"
-    },
-    "approver": {
-      "type": "string"
-    },
     "level_1": {
       "type": "json"
     },
@@ -50,8 +44,15 @@
     "users": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "clients"
+      "target": "plugin::users-permissions.user", 
+      "inversedBy": "clients"
+    },
+    "responsible": {
+      "type": "json"
+    },
+    "approver": {
+      "type": "json" 
+      "mappedBy": "clients" 
     }
   }
 }
