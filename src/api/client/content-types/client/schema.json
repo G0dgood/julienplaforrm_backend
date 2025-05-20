@@ -51,7 +51,7 @@
       "type": "json"
     },
     "approver": {
-      "type": "json" 
+      "type": "json" ,
       "mappedBy": "clients" 
     }
   }
