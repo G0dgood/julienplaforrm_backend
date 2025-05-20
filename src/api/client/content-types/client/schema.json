@@ -44,15 +44,15 @@
     "users": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "plugin::users-permissions.user", 
+      "target": "plugin::users-permissions.user",
       "inversedBy": "clients"
+    },
+    "approver": {
+      "type": "json",
+      "mappedBy": "clients"
     },
     "responsible": {
       "type": "json"
-    },
-    "approver": {
-      "type": "json" ,
-      "mappedBy": "clients" 
     }
   }
 }

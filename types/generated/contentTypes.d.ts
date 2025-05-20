@@ -549,37 +549,6 @@ export interface ApiCampaignObjectiveCampaignObjective
   };
 }
 
-export interface ApiCampaignTrendCampaignTrend
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'campaign_trends';
-  info: {
-    description: '';
-    displayName: 'campaignTrend';
-    pluralName: 'campaign-trends';
-    singularName: 'campaign-trend';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    campaign_id: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::campaign-trend.campaign-trend'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    trend: Schema.Attribute.JSON;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
   collectionName: 'campaigns';
   info: {
@@ -1477,7 +1446,6 @@ declare module '@strapi/strapi' {
       'api::buy-objective.buy-objective': ApiBuyObjectiveBuyObjective;
       'api::buy-type.buy-type': ApiBuyTypeBuyType;
       'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
-      'api::campaign-trend.campaign-trend': ApiCampaignTrendCampaignTrend;
       'api::campaign.campaign': ApiCampaignCampaign;
       'api::client-campaign-version.client-campaign-version': ApiClientCampaignVersionClientCampaignVersion;
       'api::client-signature-approval.client-signature-approval': ApiClientSignatureApprovalClientSignatureApproval;
