@@ -41,17 +41,18 @@
       "target": "api::purchase-order.purchase-order",
       "mappedBy": "client"
     },
-    "user": {
+    "users": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user", 
       "inversedBy": "clients"
     },
     "responsible": {
       "type": "json"
     },
     "approver": {
-      "type": "json"
+      "type": "json" 
+      "mappedBy": "clients" 
     }
   }
 }
