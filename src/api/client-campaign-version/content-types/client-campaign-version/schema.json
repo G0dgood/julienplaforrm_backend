@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_campaign_versions",
+  "info": {
+    "singularName": "client-campaign-version",
+    "pluralName": "client-campaign-versions",
+    "displayName": "ClientCampaignVersion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "campaign_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "json"
+    },
+    "clientId": {
+      "type": "string"
+    }
+  }
+}

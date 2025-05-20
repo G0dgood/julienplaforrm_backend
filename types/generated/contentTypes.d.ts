@@ -604,6 +604,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     campaign_summary_comment: Schema.Attribute.Text;
     campaign_timeline_end_date: Schema.Attribute.Date;
     campaign_timeline_start_date: Schema.Attribute.Date;
+    campaign_version: Schema.Attribute.String;
     channel_mix: Schema.Attribute.Component<'campaign.channel-mix', true>;
     client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
     client_selection: Schema.Attribute.Component<
@@ -642,6 +643,38 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiClientCampaignVersionClientCampaignVersion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'client_campaign_versions';
+  info: {
+    description: '';
+    displayName: 'ClientCampaignVersion';
+    pluralName: 'client-campaign-versions';
+    singularName: 'client-campaign-version';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campaign_id: Schema.Attribute.String;
+    clientId: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-campaign-version.client-campaign-version'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    version: Schema.Attribute.JSON;
   };
 }
 
@@ -1446,6 +1479,7 @@ declare module '@strapi/strapi' {
       'api::campaign-objective.campaign-objective': ApiCampaignObjectiveCampaignObjective;
       'api::campaign-trend.campaign-trend': ApiCampaignTrendCampaignTrend;
       'api::campaign.campaign': ApiCampaignCampaign;
+      'api::client-campaign-version.client-campaign-version': ApiClientCampaignVersionClientCampaignVersion;
       'api::client-signature-approval.client-signature-approval': ApiClientSignatureApprovalClientSignatureApproval;
       'api::client.client': ApiClientClient;
       'api::comment.comment': ApiCommentComment;

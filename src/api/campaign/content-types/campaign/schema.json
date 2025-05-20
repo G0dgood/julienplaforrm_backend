@@ -91,6 +91,9 @@
       "relation": "oneToOne",
       "target": "api::general-comment.general-comment",
       "mappedBy": "campaign"
+    },
+    "campaign_version": {
+      "type": "string"
     }
   }
 }
