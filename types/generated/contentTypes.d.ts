@@ -694,7 +694,6 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    approver: Schema.Attribute.JSON;
     campaigns: Schema.Attribute.Relation<'oneToMany', 'api::campaign.campaign'>;
     client_emails: Schema.Attribute.JSON;
     client_name: Schema.Attribute.String;
@@ -716,7 +715,6 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::purchase-order.purchase-order'
     >;
-    responsible: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

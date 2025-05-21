@@ -46,12 +46,6 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "clients"
-    },
-    "responsible": {
-      "type": "json"
-    },
-    "approver": {
-      "type": "json"
     }
   }
 }
