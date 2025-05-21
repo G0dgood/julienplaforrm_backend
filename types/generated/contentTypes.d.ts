@@ -569,6 +569,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'campaign.campaign-budget',
       false
     >;
+    campaign_builder: Schema.Attribute.String;
     campaign_objective: Schema.Attribute.String;
     campaign_summary_comment: Schema.Attribute.Text;
     campaign_timeline_end_date: Schema.Attribute.Date;

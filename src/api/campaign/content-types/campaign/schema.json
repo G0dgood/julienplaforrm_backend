@@ -94,6 +94,9 @@
     },
     "campaign_version": {
       "type": "string"
+    },
+    "campaign_builder": {
+      "type": "string"
     }
   }
 }
