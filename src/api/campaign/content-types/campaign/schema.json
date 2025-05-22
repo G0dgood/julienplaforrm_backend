@@ -97,6 +97,9 @@
     },
     "campaign_builder": {
       "type": "string"
+    },
+    "isApprove": {
+      "type": "boolean"
     }
   }
 }

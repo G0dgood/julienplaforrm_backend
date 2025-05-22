@@ -594,6 +594,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'api::general-comment.general-comment'
     >;
     goal_level: Schema.Attribute.String;
+    isApprove: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
