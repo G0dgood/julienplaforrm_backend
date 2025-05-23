@@ -267,8 +267,6 @@ export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    client_approver: Schema.Attribute.String;
-    internal_approver: Schema.Attribute.String;
     plan_name: Schema.Attribute.String;
   };
 }
