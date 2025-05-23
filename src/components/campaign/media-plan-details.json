@@ -11,10 +11,10 @@
       "type": "string"
     },
     "internal_approver": {
-      "type": "string"
+      "type": "json"
     },
     "client_approver": {
-      "type": "string"
+      "type": "json"
     }
   }
 }
