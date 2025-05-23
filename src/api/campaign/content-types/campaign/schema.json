@@ -100,6 +100,9 @@
     },
     "isApprove": {
       "type": "boolean"
+    },
+    "internal_approver": {
+      "type": "string"
     }
   }
 }
