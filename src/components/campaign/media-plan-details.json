@@ -9,12 +9,6 @@
   "attributes": {
     "plan_name": {
       "type": "string"
-    },
-    "internal_approver": {
-      "type": "json"
-    },
-    "client_approver": {
-      "type": "json"
     }
   }
 }
