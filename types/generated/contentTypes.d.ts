@@ -1422,6 +1422,7 @@ export interface PluginUsersPermissionsUser
         'agency_approver',
         'client_approver',
         'financial_approver',
+        'sub_client',
       ]
     >;
     username: Schema.Attribute.String &
