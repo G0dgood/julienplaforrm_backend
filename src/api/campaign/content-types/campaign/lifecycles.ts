@@ -1,6 +1,7 @@
 module.exports = {
     async afterCreate(event) {
       const { result } = event;
+      console.log("🚀 ~ afterCreate ~ result:", result)
       const campaignId = result.documentId;
   
       // Fetch the campaign with the client and its users populated
