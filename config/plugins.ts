@@ -14,7 +14,8 @@ export default ({ env }) => ({
       config: {
         register: {
           allowedFields: [
-            "clients"
+            "clients",
+            "user_type"
           ],
         },
       },
