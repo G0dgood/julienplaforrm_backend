@@ -81,7 +81,6 @@ export interface CampaignChannelMix extends Struct.ComponentSchema {
     funnel_stage: Schema.Attribute.String;
     funnel_stage_timeline_end_date: Schema.Attribute.Date;
     funnel_stage_timeline_start_date: Schema.Attribute.Date;
-    funnel_table_headers: Schema.Attribute.JSON;
     in_game: Schema.Attribute.Component<'campaign.format-selection', true>;
     messaging: Schema.Attribute.Component<'campaign.format-selection', true>;
     mobile: Schema.Attribute.Component<'campaign.format-selection', true>;

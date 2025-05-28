@@ -103,6 +103,9 @@
     },
     "internal_approver": {
       "type": "string"
+    },
+    "table_headers": {
+      "type": "json"
     }
   }
 }

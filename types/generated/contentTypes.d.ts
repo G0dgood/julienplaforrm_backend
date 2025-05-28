@@ -608,6 +608,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     >;
     progress_percent: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    table_headers: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
