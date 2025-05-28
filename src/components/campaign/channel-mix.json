@@ -75,6 +75,9 @@
       "type": "component",
       "repeatable": true,
       "component": "campaign.format-selection"
+    },
+    "funnel_table_headers": {
+      "type": "json"
     }
   }
 }
