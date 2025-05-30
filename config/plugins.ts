@@ -9,7 +9,18 @@ export default ({ env }) => ({
     //     },
     //     sizeLimit: 250 * 1024 * 1024,
     //   },
-    // }, 
+    // },
+    "users-permissions": {
+      config: {
+        register: {
+          allowedFields: [
+            "clients",
+            "user_type"
+          ],
+        },
+      },
+      enabled: true,
+    },
     upload: {
       config: {
         provider: 'cloudinary',

@@ -97,7 +97,7 @@
     },
     "isApprove": {
       "type": "boolean"
-    },
+    }, 
     "campaign_builder": {
       "type": "relation",
       "relation": "oneToOne",
@@ -109,6 +109,12 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "internal_approver"
+ 
+    "table_headers": {
+      "type": "json"
+    },
+    "selected_metrics": {
+      "type": "json" 
     }
   }
 }
