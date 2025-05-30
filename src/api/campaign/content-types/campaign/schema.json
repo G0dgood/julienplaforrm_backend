@@ -28,7 +28,6 @@
       "type": "json"
     },
     "channel_mix": {
-      "displayName": "Channel_mix",
       "type": "component",
       "repeatable": true,
       "component": "campaign.channel-mix"
