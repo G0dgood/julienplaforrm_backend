@@ -103,11 +103,8 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "campaign"
     },
-    "media_plan_approval": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "internal_approver"
+    "internal_approver": {
+      "type": "string"
     }
   }
 }

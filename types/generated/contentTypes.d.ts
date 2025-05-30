@@ -597,6 +597,7 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'api::general-comment.general-comment'
     >;
     goal_level: Schema.Attribute.String;
+    internal_approver: Schema.Attribute.String;
     isApprove: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -604,10 +605,6 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'api::campaign.campaign'
     > &
       Schema.Attribute.Private;
-    media_plan_approval: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
     media_plan_details: Schema.Attribute.Component<
       'campaign.media-plan-details',
       false
@@ -1402,10 +1399,6 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    internal_approver: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::campaign.campaign'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
