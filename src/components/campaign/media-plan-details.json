@@ -11,13 +11,19 @@
       "type": "string"
     },
     "client_approver": {
-      "type": "json"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     },
     "internal_approver": {
-      "type": "json"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     },
     "approved_by": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

@@ -99,6 +99,30 @@
       "relation": "manyToMany",
       "target": "api::client.client",
       "mappedBy": "users"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::client.client",
+      "mappedBy": "responsible"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::client.client",
+      "mappedBy": "approver"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign.campaign",
+      "mappedBy": "campaign_builder"
+    },
+    "internal_approver": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "media_plan_approval"
     }
   }
 }

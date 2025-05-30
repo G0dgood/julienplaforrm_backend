@@ -95,14 +95,20 @@
     "campaign_version": {
       "type": "string"
     },
-    "campaign_builder": {
-      "type": "string"
-    },
     "isApprove": {
       "type": "boolean"
     },
-    "internal_approver": {
-      "type": "string"
+    "campaign_builder": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "campaign"
+    },
+    "media_plan_approval": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "internal_approver"
     }
   }
 }
