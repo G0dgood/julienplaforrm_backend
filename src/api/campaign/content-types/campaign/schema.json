@@ -106,7 +106,16 @@
     "internal_approver": {
       "type": "string"
     },
+    "media_plan_approval": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "internal_approver"
+    },
     "table_headers": {
+      "type": "json"
+    },
+    "selected_metrics": {
       "type": "json"
     }
   }

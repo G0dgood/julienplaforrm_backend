@@ -611,6 +611,10 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
     >;
     progress_percent: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+<<<<<<< HEAD
+=======
+    selected_metrics: Schema.Attribute.JSON;
+>>>>>>> cbdd26303b1138f1de37c4a7a5b20babf425d4a1
     table_headers: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1434,6 +1438,7 @@ export interface PluginUsersPermissionsUser
         'agency_approver',
         'client_approver',
         'financial_approver',
+        'sub_client',
       ]
     >;
     username: Schema.Attribute.String &
