@@ -569,7 +569,10 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'campaign.campaign-budget',
       false
     >;
-    campaign_builder: Schema.Attribute.String;
+    campaign_builder: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     campaign_objective: Schema.Attribute.String;
     campaign_summary_comment: Schema.Attribute.Text;
     campaign_timeline_end_date: Schema.Attribute.Date;
@@ -594,7 +597,6 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'api::general-comment.general-comment'
     >;
     goal_level: Schema.Attribute.String;
-    internal_approver: Schema.Attribute.String;
     isApprove: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -602,6 +604,10 @@ export interface ApiCampaignCampaign extends Struct.CollectionTypeSchema {
       'api::campaign.campaign'
     > &
       Schema.Attribute.Private;
+    media_plan_approval: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
     media_plan_details: Schema.Attribute.Component<
       'campaign.media-plan-details',
       false
@@ -699,7 +705,10 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    approver: Schema.Attribute.JSON;
+    approver: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     campaigns: Schema.Attribute.Relation<'oneToMany', 'api::campaign.campaign'>;
     client_emails: Schema.Attribute.JSON;
     client_name: Schema.Attribute.String;
@@ -721,7 +730,10 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::purchase-order.purchase-order'
     >;
-    responsible: Schema.Attribute.JSON;
+    responsible: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1378,6 +1390,7 @@ export interface PluginUsersPermissionsUser
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    campaign: Schema.Attribute.Relation<'oneToOne', 'api::campaign.campaign'>;
     campaigns: Schema.Attribute.Relation<'oneToMany', 'api::campaign.campaign'>;
     clients: Schema.Attribute.Relation<'manyToMany', 'api::client.client'>;
     comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
@@ -1391,6 +1404,10 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    internal_approver: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::campaign.campaign'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1416,6 +1433,7 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<'manyToMany', 'api::client.client'>;
     user_type: Schema.Attribute.Enumeration<
       [
         'admin',
@@ -1433,6 +1451,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    users: Schema.Attribute.Relation<'manyToMany', 'api::client.client'>;
   };
 }
 

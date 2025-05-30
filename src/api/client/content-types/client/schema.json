@@ -48,10 +48,16 @@
       "inversedBy": "clients"
     },
     "responsible": {
-      "type": "json"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "users"
     },
     "approver": {
-      "type": "json"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user"
     }
   }
 }

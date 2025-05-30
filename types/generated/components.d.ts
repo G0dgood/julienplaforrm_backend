@@ -267,9 +267,18 @@ export interface CampaignMediaPlanDetails extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    approved_by: Schema.Attribute.String;
-    client_approver: Schema.Attribute.JSON;
-    internal_approver: Schema.Attribute.JSON;
+    approved_by: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    client_approver: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    internal_approver: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
     plan_name: Schema.Attribute.String;
   };
 }
